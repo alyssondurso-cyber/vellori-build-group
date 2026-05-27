@@ -167,7 +167,7 @@ export default function VelloriWebsite() {
               <Button variant="secondary">Start Your Project</Button>
             </div>
           </motion.div>
-          <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, delay: 0.15 }} className="mt-12 block lg:mt-0"
+          <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, delay: 0.15 }} className="mt-12 block lg:mt-0">
             <div className="ml-auto max-w-sm border border-white/20 bg-white/8 p-8 backdrop-blur-md">
               <div className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">Refined Residential Work</div>
               <div className="mt-16 grid grid-cols-2 gap-8">
