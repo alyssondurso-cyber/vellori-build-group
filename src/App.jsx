@@ -124,7 +124,7 @@ export default function VelloriWebsite() {
   onClick={() => setMobileMenu(!mobileMenu)}
   className="text-white lg:hidden"
 >
-  {mobileMenu ? <X size={28} /> : <Menu size={28} />}
+  <X size={22} /> : <Menu size={22} />
 </button>
 
 {/* Mobile Menu */}
