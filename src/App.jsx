@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Phone, Mail, CheckCircle2 } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Mail, CheckCircle2, Menu, X } from "lucide-react";
 
 const NAVY = "#0D1B2A";
 const GOLD = "#C8A96B";
@@ -63,6 +63,9 @@ function SectionLabel({ children }) {
 }
 
 export default function VelloriWebsite() {
+
+  const [mobileMenu, setMobileMenu] = React.useState(false);
+
   return (
     <main className="min-h-screen bg-[#F3EFE6] text-[#0D1B2A]">
       <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#0D1B2A]/85 backdrop-blur-xl">
@@ -116,6 +119,24 @@ export default function VelloriWebsite() {
             <a href="#about" className="hover:text-[#C8A96B]">About</a>
             <a href="#contact" className="hover:text-[#C8A96B]">Contact</a>
           </nav>
+          {/* Mobile Button */}
+<button
+  onClick={() => setMobileMenu(!mobileMenu)}
+  className="text-white lg:hidden"
+>
+  {mobileMenu ? <X size={28} /> : <Menu size={28} />}
+</button>
+
+{/* Mobile Menu */}
+{mobileMenu && (
+  <div className="absolute left-0 top-full w-full bg-[#0D1B2A] border-t border-white/10 flex flex-col items-center gap-6 py-8 text-sm uppercase tracking-[0.18em] text-white lg:hidden">
+    <a href="#home" onClick={() => setMobileMenu(false)}>Home</a>
+    <a href="#services" onClick={() => setMobileMenu(false)}>Services</a>
+    <a href="#projects" onClick={() => setMobileMenu(false)}>Projects</a>
+    <a href="#about" onClick={() => setMobileMenu(false)}>About</a>
+    <a href="#contact" onClick={() => setMobileMenu(false)}>Contact</a>
+  </div>
+)}
           <a href="#contact" className="hidden rounded-full border border-[#C8A96B]/60 px-5 py-2 text-xs uppercase tracking-[0.22em] text-white transition hover:bg-[#C8A96B]/95 hover:text-[#0D1B2A] md:inline-flex">
             Request Consultation
           </a>
