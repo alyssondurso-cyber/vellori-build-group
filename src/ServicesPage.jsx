@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ArrowRight, CheckCircle2, MapPin, Mail, Phone } from "lucide-react";
 
 const serviceGroups = [
@@ -121,7 +121,48 @@ const areas = [
   "South Florida",
 ];
 
-export default function ServicesPage() {
+ export default function ServicesPage() {
+  useEffect(() => {
+    document.title =
+      "Residential Services in Boca Raton | VELLORI Build Group";
+
+    let description = document.querySelector('meta[name="description"]');
+
+    if (!description) {
+      description = document.createElement("meta");
+      description.setAttribute("name", "description");
+      document.head.appendChild(description);
+    }
+
+    description.setAttribute(
+      "content",
+      "Explore VELLORI Build Group residential services in Boca Raton and South Florida, including stucco, travertine, tile, outdoor living, exterior improvements, surface preparation, demolition, concrete-related scopes, and refined finishes."
+    );
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+
+    canonical.setAttribute(
+      "href",
+      "https://velloribuild.com/services"
+    );
+
+    return () => {
+      document.title =
+        "VELLORI Build Group | Premium Exterior Improvements & Outdoor Living in Boca Raton";
+
+      canonical?.setAttribute(
+        "href",
+        "https://velloribuild.com/"
+      );
+    };
+  }, []);
+
   return (
     <main className="min-h-screen bg-[#F3EFE6] text-[#0D1B2A]">
       <header className="bg-[#0D1B2A] px-6 py-7 text-white lg:px-10">
