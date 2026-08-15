@@ -212,7 +212,18 @@ const areas = [
                 key={group.title}
                 className="border border-[#0D1B2A]/10 bg-white p-8 md:p-10"
               >
-                <h2 className="font-serif text-3xl">{group.title}</h2>
+              {group.title === "Stucco & Exterior Finishes" ? (
+  <h2 className="font-serif text-3xl">
+    <a
+      href="/stucco-boca-raton"
+      className="transition hover:text-[#C8A96B]"
+    >
+      {group.title}
+    </a>
+  </h2>
+) : (
+  <h2 className="font-serif text-3xl">{group.title}</h2>
+)}
 
                 <p className="mt-5 leading-7 text-[#0D1B2A]/65">
                   {group.description}
