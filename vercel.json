@@ -10,6 +10,14 @@
       "destination": "/services.html"
     },
     {
+      "source": "/stucco-boca-raton",
+      "destination": "/stucco-boca-raton.html"
+    },
+    {
+      "source": "/stucco-boca-raton/",
+      "destination": "/stucco-boca-raton.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
