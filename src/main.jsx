@@ -2,14 +2,23 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import ServicesPage from "./ServicesPage.jsx";
+import StuccoPage from "./StuccoPage.jsx";
 import "./index.css";
 
 const path = window.location.pathname;
 
-const Page =
-  path === "/services" || path === "/services/"
-    ? ServicesPage
-    : App;
+let Page = App;
+
+if (path === "/services" || path === "/services/") {
+  Page = ServicesPage;
+}
+
+if (
+  path === "/stucco-boca-raton" ||
+  path === "/stucco-boca-raton/"
+) {
+  Page = StuccoPage;
+}
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
