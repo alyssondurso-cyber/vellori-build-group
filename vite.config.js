@@ -9,6 +9,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         services: resolve(__dirname, "services.html"),
+        stuccoBocaRaton: resolve(__dirname, "stucco-boca-raton.html"),
       },
     },
   },
