@@ -1,16 +1,22 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { resolve } from "path";
+import { resolve } from "node:path";
 
 export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "index.html"),
-        services: resolve(__dirname, "services.html"),
-        stuccoBocaRaton: resolve(__dirname, "stucco-boca-raton.html"),
-        travertineBocaRaton: resolve(__dirname, "travertine-boca-raton.html"),
+        main: resolve(import.meta.dirname, "index.html"),
+        services: resolve(import.meta.dirname, "services.html"),
+        stuccoBocaRaton: resolve(
+          import.meta.dirname,
+          "stucco-boca-raton.html"
+        ),
+        travertineBocaRaton: resolve(
+          import.meta.dirname,
+          "travertine-boca-raton.html"
+        ),
       },
     },
   },
