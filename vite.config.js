@@ -17,6 +17,10 @@ export default defineConfig({
           import.meta.dirname,
           "travertine-boca-raton.html"
         ),
+        outdoorLivingBocaRaton: resolve(
+          import.meta.dirname,
+          "outdoor-living-boca-raton.html"
+        ),
       },
     },
   },
