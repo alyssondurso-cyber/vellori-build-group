@@ -18,6 +18,14 @@
       "destination": "/stucco-boca-raton.html"
     },
     {
+      "source": "/travertine-boca-raton",
+      "destination": "/travertine-boca-raton.html"
+    },
+    {
+      "source": "/travertine-boca-raton/",
+      "destination": "/travertine-boca-raton.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
