@@ -212,10 +212,19 @@ const areas = [
                 key={group.title}
                 className="border border-[#0D1B2A]/10 bg-white p-8 md:p-10"
               >
-              {group.title === "Stucco & Exterior Finishes" ? (
+             {group.title === "Stucco & Exterior Finishes" ? (
   <h2 className="font-serif text-3xl">
     <a
       href="/stucco-boca-raton"
+      className="transition hover:text-[#C8A96B]"
+    >
+      {group.title}
+    </a>
+  </h2>
+) : group.title === "Travertine, Tile & Stone" ? (
+  <h2 className="font-serif text-3xl">
+    <a
+      href="/travertine-boca-raton"
       className="transition hover:text-[#C8A96B]"
     >
       {group.title}
