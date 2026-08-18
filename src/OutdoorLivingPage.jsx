@@ -167,12 +167,13 @@ export default function OutdoorLivingPage() {
           </p>
 
           <h2 className="mt-5 font-serif text-4xl md:text-6xl">
-            Outdoor living improvements in Boca Raton and surrounding areas.
+            Outdoor living improvements across Boca Raton, Palm Beach County & South Florida.
           </h2>
 
           <p className="mt-7 max-w-3xl leading-8 text-[#0D1B2A]/65">
-            VELLORI supports premium residential exterior improvement projects
-            across Boca Raton and surrounding South Florida communities.
+           VELLORI supports premium residential outdoor living and exterior improvement
+projects across Boca Raton, Palm Beach County, Broward County, Miami-Dade, and
+surrounding South Florida communities.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
