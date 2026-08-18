@@ -5,6 +5,7 @@ import ServicesPage from "./ServicesPage.jsx";
 import StuccoPage from "./StuccoPage.jsx";
 import TravertinePage from "./TravertinePage.jsx";
 import OutdoorLivingPage from "./OutdoorLivingPage.jsx";
+import ConcretePage from "./ConcretePage.jsx";
 import "./index.css";
 
 const path = window.location.pathname;
@@ -34,6 +35,13 @@ if (
   path === "/outdoor-living-boca-raton/"
 ) {
   Page = OutdoorLivingPage;
+}
+
+if (
+  path === "/concrete-boca-raton" ||
+  path === "/concrete-boca-raton/"
+) {
+  Page = ConcretePage;
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(
