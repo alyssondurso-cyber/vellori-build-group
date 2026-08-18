@@ -21,6 +21,10 @@ export default defineConfig({
           import.meta.dirname,
           "outdoor-living-boca-raton.html"
         ),
+        concreteBocaRaton: resolve(
+          import.meta.dirname,
+          "concrete-boca-raton.html"
+        ),
       },
     },
   },
