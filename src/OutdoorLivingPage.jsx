@@ -25,12 +25,22 @@ const outdoorLivingServices = [
 const areas = [
   "Boca Raton",
   "Delray Beach",
+  "Highland Beach",
   "Palm Beach",
   "West Palm Beach",
+  "Palm Beach Gardens",
+  "Jupiter",
   "Parkland",
+  "Coral Springs",
+  "Pompano Beach",
   "Fort Lauderdale",
+  "Hollywood",
+  "Aventura",
+  "Sunny Isles Beach",
+  "Bal Harbour",
+  "Miami Beach",
+  "Miami",
 ];
-
 export default function OutdoorLivingPage() {
   return (
     <main className="min-h-screen bg-[#F3EFE6] text-[#0D1B2A]">
