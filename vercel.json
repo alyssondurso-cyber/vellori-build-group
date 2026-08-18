@@ -26,6 +26,14 @@
       "destination": "/travertine-boca-raton.html"
     },
     {
+      "source": "/outdoor-living-boca-raton",
+      "destination": "/outdoor-living-boca-raton.html"
+    },
+    {
+      "source": "/outdoor-living-boca-raton/",
+      "destination": "/outdoor-living-boca-raton.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
