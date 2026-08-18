@@ -192,14 +192,15 @@ const areas = [
           </p>
 
           <h1 className="mt-8 max-w-5xl font-serif text-5xl leading-[1.05] md:text-7xl">
-            Premium Residential Services Across Boca Raton & South Florida
+           Premium Residential Services Across South Florida
           </h1>
 
           <p className="mt-10 max-w-3xl text-lg leading-8 text-white/70">
-            VELLORI Build Group supports premium residential projects through
-            organized execution, refined craftsmanship, exterior improvements,
-            outdoor living, stucco, travertine, tile, surface preparation,
-            demolition, concrete-related scopes, and specialty finishes.
+            VELLORI Build Group supports premium residential projects across Boca Raton,
+Palm Beach County, Broward County, Miami-Dade, and surrounding South Florida
+communities through organized execution, refined craftsmanship, exterior
+improvements, outdoor living, stucco, travertine, tile, surface preparation,
+demolition, concrete-related scopes, and specialty finishes.
           </p>
         </div>
       </section>
