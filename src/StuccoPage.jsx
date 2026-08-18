@@ -163,12 +163,13 @@ export default function StuccoPage() {
           </p>
 
           <h2 className="mt-5 font-serif text-4xl md:text-6xl">
-            Stucco services in Boca Raton and surrounding areas.
+            Stucco services across Boca Raton, Palm Beach County & South Florida.
           </h2>
 
           <p className="mt-7 max-w-3xl leading-8 text-[#0D1B2A]/65">
-            VELLORI supports residential exterior improvement projects in Boca
-            Raton and surrounding South Florida communities.
+            VELLORI supports residential stucco and exterior improvement projects
+across Boca Raton, Palm Beach County, Broward County, Miami-Dade, and
+surrounding South Florida communities.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
