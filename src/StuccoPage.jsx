@@ -22,13 +22,24 @@ const stuccoServices = [
   "Exterior Finish Repairs",
 ];
 
-const areas = [
+  const areas = [
   "Boca Raton",
   "Delray Beach",
+  "Highland Beach",
   "Palm Beach",
   "West Palm Beach",
+  "Palm Beach Gardens",
+  "Jupiter",
   "Parkland",
+  "Coral Springs",
+  "Pompano Beach",
   "Fort Lauderdale",
+  "Hollywood",
+  "Aventura",
+  "Sunny Isles Beach",
+  "Bal Harbour",
+  "Miami Beach",
+  "Miami",
 ];
 
 export default function StuccoPage() {
