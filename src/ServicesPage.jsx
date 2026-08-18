@@ -230,6 +230,15 @@ const areas = [
       {group.title}
     </a>
   </h2>
+) : group.title === "Outdoor Living" ? (
+  <h2 className="font-serif text-3xl">
+    <a
+      href="/outdoor-living-boca-raton"
+      className="transition hover:text-[#C8A96B]"
+    >
+      {group.title}
+    </a>
+  </h2>
 ) : (
   <h2 className="font-serif text-3xl">{group.title}</h2>
 )}
