@@ -168,7 +168,36 @@ export default function StuccoPage() {
           </div>
         </div>
       </section>
+      
+<section className="bg-white px-6 py-24 lg:px-10">
+  <div className="mx-auto max-w-7xl">
+    <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">
+      EIFS & Stucco Textures
+    </p>
 
+    <div className="mt-8 grid gap-10 lg:grid-cols-2">
+      <div>
+        <h2 className="font-serif text-4xl leading-tight md:text-5xl">
+          EIFS installation and specialty stucco finishes in Boca Raton.
+        </h2>
+      </div>
+
+      <div className="space-y-6 text-lg leading-8 text-[#0D1B2A]/65">
+        <p>
+          VELLORI supports EIFS installation and exterior finish systems for
+          residential improvement projects, including preparation, reinforced
+          base layers, finish applications, and organized project execution.
+        </p>
+
+        <p>
+          We also work with smooth, textured, and Spanish texture stucco
+          finishes, helping create refined exterior surfaces with careful
+          preparation and attention to detail.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
       <section className="px-6 py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">
