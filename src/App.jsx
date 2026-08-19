@@ -198,6 +198,35 @@ export default function VelloriWebsite() {
               ))}
             </div>
           </div>
+          <div className="mt-14 flex flex-wrap gap-x-8 gap-y-4 border-t border-[#0D1B2A]/10 pt-8 text-sm">
+  <a
+    href="/stucco-boca-raton"
+    className="transition hover:text-[#C8A96B]"
+  >
+    Stucco & Exterior Finishes
+  </a>
+
+  <a
+    href="/travertine-boca-raton"
+    className="transition hover:text-[#C8A96B]"
+  >
+    Travertine & Tile Installation
+  </a>
+
+  <a
+    href="/outdoor-living-boca-raton"
+    className="transition hover:text-[#C8A96B]"
+  >
+    Outdoor Living
+  </a>
+
+  <a
+    href="/concrete-boca-raton"
+    className="transition hover:text-[#C8A96B]"
+  >
+    Concrete Project Support
+  </a>
+</div>
         </div>
       </section>
 
