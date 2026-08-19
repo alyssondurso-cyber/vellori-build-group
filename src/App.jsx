@@ -114,7 +114,7 @@ export default function VelloriWebsite() {
           </div>
           <nav className="hidden items-center gap-9 text-[11px] uppercase tracking-[0.16em] text-white/80 lg:flex">
             <a href="#home" className="transition-colors duration-300 hover:text-[#C8A96B]/85">Home</a>
-            <a href="#services" className="hover:text-[#C8A96B]">Services</a>
+            <a href="/services" className="hover:text-[#C8A96B]">Services</a>
             <a href="#projects" className="hover:text-[#C8A96B]">Projects</a>
             <a href="#about" className="hover:text-[#C8A96B]">About</a>
             <a href="#contact" className="hover:text-[#C8A96B]">Contact</a>
@@ -131,7 +131,7 @@ export default function VelloriWebsite() {
 {mobileMenu && (
   <div className="absolute left-0 top-full w-full bg-[#0D1B2A] border-t border-white/10 flex flex-col items-center gap-6 py-8 text-sm uppercase tracking-[0.18em] text-white lg:hidden">
     <a href="#home" onClick={() => setMobileMenu(false)}>Home</a>
-    <a href="#services" onClick={() => setMobileMenu(false)}>Services</a>
+    <a href="/services" onClick={() => setMobileMenu(false)}>Services</a>
     <a href="#projects" onClick={() => setMobileMenu(false)}>Projects</a>
     <a href="#about" onClick={() => setMobileMenu(false)}>About</a>
     <a href="#contact" onClick={() => setMobileMenu(false)}>Contact</a>
