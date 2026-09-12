@@ -121,7 +121,7 @@ export default function ServiceAreasPage() {
               </div>
             ))}
             <p className="pt-3 text-sm leading-7 text-[#0D1B2A]/60">
-              Project requirements, permitting, and licensed-trade coordination are reviewed according to the location and scope of work.
+              VELLORI reviews each project by scope and location. Where licensing or permitting is required, work is performed only under the responsibility and coordination of the appropriately licensed contractor or trade.
             </p>
           </div>
         </div>
