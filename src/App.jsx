@@ -18,29 +18,31 @@ const services = [
 
 const projects = [
   {
-    title: "Boca Raton Outdoor Living Transformation",
+    title: "South Florida Outdoor Living Inspiration",
     tag: "Travertine • Pool Deck • Exterior Living",
     image:
       "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1600&auto=format&fit=crop",
   },
   {
-    title: "Palm Beach Exterior Refinement",
+    title: "Coastal Exterior Design Inspiration",
     tag: "Facade • Paint • Architectural Finish",
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1600&auto=format&fit=crop",
   },
   {
-    title: "Miami Modern Pool Environment",
+    title: "Modern Pool Environment Inspiration",
     tag: "Pool Deck • Stone • Outdoor Upgrade",
     image:
       "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=1600&auto=format&fit=crop",
   },
 ];
 
-function Button({ children, variant = "primary" }) {
+function Button({ children, variant = "primary", href }) {
   const primary = variant === "primary";
+  const Component = href ? "a" : "button";
   return (
-    <button
+    <Component
+      href={href}
       className={`group inline-flex items-center gap-3 rounded-full px-7 py-[15px] text-[11px] tracking-[0.20em] uppercase transition-all duration-700 ease-out ${
         primary
           ? "bg-[#C8A96B] text-[#0D1B2A] hover:bg-[#d7ba82]"
@@ -49,7 +51,7 @@ function Button({ children, variant = "primary" }) {
     >
       {children}
       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-    </button>
+    </Component>
   );
 }
 
@@ -65,6 +67,22 @@ function SectionLabel({ children }) {
 export default function VelloriWebsite() {
 
   const [mobileMenu, setMobileMenu] = React.useState(false);
+
+  const handleContactSubmit = (event) => {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const name = form.get("name") || "";
+    const phone = form.get("phone") || "";
+    const email = form.get("email") || "";
+    const location = form.get("location") || "";
+    const service = form.get("service") || "";
+    const details = form.get("details") || "";
+    const subject = encodeURIComponent(`Project inquiry from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nProject location: ${location}\nService: ${service}\n\nProject details:\n${details}`
+    );
+    window.location.href = `mailto:info@velloribuild.com?subject=${subject}&body=${body}`;
+  };
 
   return (
     <main className="min-h-screen bg-[#F3EFE6] text-[#0D1B2A]">
@@ -115,6 +133,7 @@ export default function VelloriWebsite() {
           <nav className="hidden items-center gap-9 text-[11px] uppercase tracking-[0.16em] text-white/80 lg:flex">
             <a href="#home" className="transition-colors duration-300 hover:text-[#C8A96B]/85">Home</a>
             <a href="/services" className="hover:text-[#C8A96B]">Services</a>
+            <a href="/service-areas" className="hover:text-[#C8A96B]">Areas</a>
             <a href="#projects" className="hover:text-[#C8A96B]">Projects</a>
             <a href="#about" className="hover:text-[#C8A96B]">About</a>
             <a href="#contact" className="hover:text-[#C8A96B]">Contact</a>
@@ -124,7 +143,7 @@ export default function VelloriWebsite() {
   onClick={() => setMobileMenu(!mobileMenu)}
   className="text-white lg:hidden"
 >
- <Menu tamanho={22} />
+ <Menu size={22} />
 </button>
 
 {/* Mobile Menu */}
@@ -132,6 +151,7 @@ export default function VelloriWebsite() {
   <div className="absolute left-0 top-full w-full bg-[#0D1B2A] border-t border-white/10 flex flex-col items-center gap-6 py-8 text-sm uppercase tracking-[0.18em] text-white lg:hidden">
     <a href="#home" onClick={() => setMobileMenu(false)}>Home</a>
     <a href="/services" onClick={() => setMobileMenu(false)}>Services</a>
+    <a href="/service-areas" onClick={() => setMobileMenu(false)}>Service Areas</a>
     <a href="#projects" onClick={() => setMobileMenu(false)}>Projects</a>
     <a href="#about" onClick={() => setMobileMenu(false)}>About</a>
     <a href="#contact" onClick={() => setMobileMenu(false)}>Contact</a>
@@ -163,8 +183,8 @@ export default function VelloriWebsite() {
             </p>
             <p className="mt-6 text-[12px] uppercase tracking-[0.32em] text-[#C8A96B]/90">Building Excellence. Creating Legacies.</p>
             <div className="mt-16 flex flex-col gap-5 sm:flex-row">
-              <Button>Request Consultation</Button>
-              <Button variant="secondary">Start Your Project</Button>
+              <Button href="#contact">Request Consultation</Button>
+              <Button href="/services" variant="secondary">Explore Services</Button>
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, delay: 0.15 }} className="mt-12 block lg:mt-0">
@@ -234,10 +254,10 @@ export default function VelloriWebsite() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 flex flex-col justify-between gap-10 md:flex-row md:items-end">
             <div>
-              <SectionLabel>Projects</SectionLabel>
-              <h2 className="font-serif text-4xl md:text-6xl">Before, after, and beyond ordinary.</h2>
+              <SectionLabel>Design Inspiration</SectionLabel>
+              <h2 className="font-serif text-4xl md:text-6xl">A visual direction for refined outdoor living.</h2>
             </div>
-            <p className="max-w-md text-sm leading-7 text-white/65">A curated portfolio structure designed to build trust, show transformation, and support future Google Ads and local SEO campaigns.</p>
+            <p className="max-w-md text-sm leading-7 text-white/65">Conceptual inspiration for exterior materials, architecture, and outdoor environments. View verified VELLORI work on our Houzz profile and project channels.</p>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
             {projects.map((project) => (
@@ -302,24 +322,24 @@ export default function VelloriWebsite() {
             <h2 className="font-serif text-[42px] leading-[1.06] tracking-[-0.01em] md:text-[66px]">Request a premium consultation.</h2>
             <p className="mt-10 max-w-lg text-[18px] leading-[2.05rem] text-white/68">Tell us about your exterior transformation. Our team will review your project details and contact you to discuss the next steps.</p>
             <div className="mt-10 space-y-5 text-sm text-white/70">
-              <div className="flex items-center gap-4"><MapPin className="h-5 w-5 text-[#C8A96B]" /> Serving Boca Raton, Palm Beach, Miami & South Florida</div>
-              <div className="flex items-center gap-4"><Mail className="h-5 w-5 text-[#C8A96B]" /> info@velloribuild.com</div>
-              <div className="flex items-center gap-4"><Phone className="h-5 w-5 text-[#C8A96B]" /> Request by consultation form</div>
+              <div className="flex items-center gap-4"><MapPin className="h-5 w-5 text-[#C8A96B]" /> <a href="/service-areas" className="hover:text-[#C8A96B]">Boca Raton, Palm Beach, Fort Lauderdale, Miami & South Florida</a></div>
+              <a href="mailto:info@velloribuild.com" className="flex items-center gap-4 hover:text-[#C8A96B]"><Mail className="h-5 w-5 text-[#C8A96B]" /> info@velloribuild.com</a>
+              <a href="tel:+15618874653" className="flex items-center gap-4 hover:text-[#C8A96B]"><Phone className="h-5 w-5 text-[#C8A96B]" /> (561) 887-4653</a>
             </div>
           </div>
-          <form className="bg-[#F3EFE6] p-11 text-[#0D1B2A] md:p-14">
+          <form onSubmit={handleContactSubmit} className="bg-[#F3EFE6] p-11 text-[#0D1B2A] md:p-14">
             <div className="grid gap-5 md:grid-cols-2">
-              <input className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B]" placeholder="Name" />
-              <input className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B]" placeholder="Phone" />
-              <input className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B] md:col-span-2" placeholder="Email" />
-              <input className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B] md:col-span-2" placeholder="Project Location" />
-              <select className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B] md:col-span-2">
-                <option>Service Needed</option>
+              <input className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B]" name="name" autoComplete="name" required placeholder="Name" />
+              <input className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B]" name="phone" type="tel" autoComplete="tel" required placeholder="Phone" />
+              <input className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B] md:col-span-2" name="email" type="email" autoComplete="email" required placeholder="Email" />
+              <input className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B] md:col-span-2" name="location" autoComplete="address-level2" required placeholder="Project City or ZIP Code" />
+              <select name="service" required defaultValue="" className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B] md:col-span-2">
+                <option value="" disabled>Service Needed</option>
                 {services.map((service) => <option key={service}>{service}</option>)}
               </select>
-              <textarea className="min-h-36 border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B] md:col-span-2" placeholder="Tell us about your project" />
+              <textarea className="min-h-36 border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B] md:col-span-2" name="details" required placeholder="Tell us about your project" />
             </div>
-            <button type="button" className="mt-7 inline-flex w-full items-center justify-center gap-3 bg-[#0D1B2A] px-7 py-4 text-sm uppercase tracking-[0.22em] text-white transition hover:bg-[#C8A96B] hover:text-[#0D1B2A]">
+            <button type="submit" className="mt-7 inline-flex w-full items-center justify-center gap-3 bg-[#0D1B2A] px-7 py-4 text-sm uppercase tracking-[0.22em] text-white transition hover:bg-[#C8A96B] hover:text-[#0D1B2A]">
               Request Estimate <ArrowRight className="h-4 w-4" />
             </button>
           </form>
@@ -327,13 +347,17 @@ export default function VelloriWebsite() {
       </section>
 
       <footer className="bg-[#08111c] px-6 py-10 text-white lg:px-10">
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-center">
+        <div className="mx-auto max-w-7xl">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
           <div>
             <div className="font-serif text-2xl tracking-[0.28em]">VELLORI</div>
             <div className="mt-1 text-[10px] uppercase tracking-[0.35em] text-[#C8A96B]">Build Group</div>
           </div>
           <p className="text-xs uppercase tracking-[0.25em] text-white/55">Building Excellence. Creating Legacies.</p>
-          <p className="text-xs text-white/45">© 2026 VELLORI Build Group. All rights reserved.</p>
+          <div className="flex gap-5 text-xs text-white/55"><a href="/services" className="hover:text-[#C8A96B]">Services</a><a href="/service-areas" className="hover:text-[#C8A96B]">Service Areas</a><a href="https://www.instagram.com/velloribuild/" target="_blank" rel="noreferrer" className="hover:text-[#C8A96B]">Instagram</a></div>
+          <p className="text-xs text-white/45">© 2026 VELLORI Build Group.</p>
+        </div>
+        <p className="mt-7 max-w-5xl border-t border-white/10 pt-6 text-xs leading-6 text-white/45">VELLORI evaluates each project by scope and location. Work requiring permits or licensed trades is performed only under the responsibility and coordination required by applicable Florida and local requirements.</p>
         </div>
       </footer>
     </main>
