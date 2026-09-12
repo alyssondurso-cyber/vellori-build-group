@@ -1,49 +1,24 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
-    {
-      "source": "/services",
-      "destination": "/services.html"
-    },
-    {
-      "source": "/services/",
-      "destination": "/services.html"
-    },
-    {
-      "source": "/stucco-boca-raton",
-      "destination": "/stucco-boca-raton.html"
-    },
-    {
-      "source": "/stucco-boca-raton/",
-      "destination": "/stucco-boca-raton.html"
-    },
-    {
-      "source": "/travertine-boca-raton",
-      "destination": "/travertine-boca-raton.html"
-    },
-    {
-      "source": "/travertine-boca-raton/",
-      "destination": "/travertine-boca-raton.html"
-    },
-    {
-      "source": "/outdoor-living-boca-raton",
-      "destination": "/outdoor-living-boca-raton.html"
-    },
-    {
-      "source": "/outdoor-living-boca-raton/",
-      "destination": "/outdoor-living-boca-raton.html"
-    },
-    {
-      "source": "/concrete-boca-raton",
-      "destination": "/concrete-boca-raton.html"
-    },
-    {
-      "source": "/concrete-boca-raton/",
-      "destination": "/concrete-boca-raton.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/services", "destination": "/services.html" },
+    { "source": "/services/", "destination": "/services.html" },
+    { "source": "/stucco-boca-raton", "destination": "/stucco-boca-raton.html" },
+    { "source": "/stucco-boca-raton/", "destination": "/stucco-boca-raton.html" },
+    { "source": "/travertine-boca-raton", "destination": "/travertine-boca-raton.html" },
+    { "source": "/travertine-boca-raton/", "destination": "/travertine-boca-raton.html" },
+    { "source": "/outdoor-living-boca-raton", "destination": "/outdoor-living-boca-raton.html" },
+    { "source": "/outdoor-living-boca-raton/", "destination": "/outdoor-living-boca-raton.html" },
+    { "source": "/concrete-boca-raton", "destination": "/concrete-boca-raton.html" },
+    { "source": "/concrete-boca-raton/", "destination": "/concrete-boca-raton.html" },
+    { "source": "/service-areas", "destination": "/service-areas.html" },
+    { "source": "/service-areas/", "destination": "/service-areas.html" },
+    { "source": "/stucco-palm-beach", "destination": "/stucco-palm-beach.html" },
+    { "source": "/stucco-palm-beach/", "destination": "/stucco-palm-beach.html" },
+    { "source": "/stucco-fort-lauderdale", "destination": "/stucco-fort-lauderdale.html" },
+    { "source": "/stucco-fort-lauderdale/", "destination": "/stucco-fort-lauderdale.html" },
+    { "source": "/stucco-miami", "destination": "/stucco-miami.html" },
+    { "source": "/stucco-miami/", "destination": "/stucco-miami.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
