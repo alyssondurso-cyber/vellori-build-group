@@ -6,43 +6,26 @@ import StuccoPage from "./StuccoPage.jsx";
 import TravertinePage from "./TravertinePage.jsx";
 import OutdoorLivingPage from "./OutdoorLivingPage.jsx";
 import ConcretePage from "./ConcretePage.jsx";
+import ServiceAreasPage from "./ServiceAreasPage.jsx";
+import LocalStuccoPage from "./LocalStuccoPage.jsx";
 import "./index.css";
 
-const path = window.location.pathname;
+const path = window.location.pathname.replace(/\/$/, "") || "/";
 
-let Page = App;
+const routes = {
+  "/": App,
+  "/services": ServicesPage,
+  "/stucco-boca-raton": StuccoPage,
+  "/travertine-boca-raton": TravertinePage,
+  "/outdoor-living-boca-raton": OutdoorLivingPage,
+  "/concrete-boca-raton": ConcretePage,
+  "/service-areas": ServiceAreasPage,
+  "/stucco-palm-beach": LocalStuccoPage,
+  "/stucco-fort-lauderdale": LocalStuccoPage,
+  "/stucco-miami": LocalStuccoPage,
+};
 
-if (path === "/services" || path === "/services/") {
-  Page = ServicesPage;
-}
-
-if (
-  path === "/stucco-boca-raton" ||
-  path === "/stucco-boca-raton/"
-) {
-  Page = StuccoPage;
-}
-
-if (
-  path === "/travertine-boca-raton" ||
-  path === "/travertine-boca-raton/"
-) {
-  Page = TravertinePage;
-}
-
-if (
-  path === "/outdoor-living-boca-raton" ||
-  path === "/outdoor-living-boca-raton/"
-) {
-  Page = OutdoorLivingPage;
-}
-
-if (
-  path === "/concrete-boca-raton" ||
-  path === "/concrete-boca-raton/"
-) {
-  Page = ConcretePage;
-}
+const Page = routes[path] || App;
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
