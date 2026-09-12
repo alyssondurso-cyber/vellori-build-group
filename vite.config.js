@@ -29,18 +29,11 @@ export default defineConfig({
           import.meta.dirname,
           "service-areas.html"
         ),
-        stuccoPalmBeach: resolve(
+        projectRequest: resolve(
           import.meta.dirname,
-          "stucco-palm-beach.html"
+          "project-request.html"
         ),
-        stuccoFortLauderdale: resolve(
-          import.meta.dirname,
-          "stucco-fort-lauderdale.html"
-        ),
-        stuccoMiami: resolve(
-          import.meta.dirname,
-          "stucco-miami.html"
-        ),
+        privacy: resolve(import.meta.dirname, "privacy.html"),
       },
     },
   },

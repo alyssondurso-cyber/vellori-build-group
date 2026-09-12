@@ -6,32 +6,16 @@ const regions = [
     name: "Palm Beach County",
     summary: "Premium residential exterior work from Boca Raton through Palm Beach and the northern coastal communities.",
     areas: ["Boca Raton", "Highland Beach", "Delray Beach", "Gulf Stream", "Boynton Beach", "Manalapan", "Lantana", "Lake Worth Beach", "Palm Beach", "West Palm Beach", "Palm Beach Shores", "Singer Island", "Riviera Beach", "North Palm Beach", "Palm Beach Gardens", "Juno Beach", "Jupiter", "Jupiter Inlet Colony", "Jupiter Island", "Wellington", "Royal Palm Beach", "Loxahatchee"],
-    link: "/stucco-palm-beach",
-    linkText: "Palm Beach stucco & exterior finishes",
   },
   {
     name: "Broward County",
     summary: "Exterior finish and renovation support for waterfront, luxury, and established residential properties throughout Broward.",
     areas: ["Deerfield Beach", "Hillsboro Beach", "Lighthouse Point", "Pompano Beach", "Lauderdale-by-the-Sea", "Sea Ranch Lakes", "Fort Lauderdale", "Las Olas Isles", "Harbor Beach", "Rio Vista", "Coral Ridge", "Oakland Park", "Wilton Manors", "Dania Beach", "Hollywood", "Hallandale Beach", "Davie", "Plantation", "Sunrise", "Weston", "Pembroke Pines", "Miramar", "Coral Springs", "Parkland", "Coconut Creek"],
-    link: "/stucco-fort-lauderdale",
-    linkText: "Fort Lauderdale stucco & exterior finishes",
   },
   {
     name: "Miami-Dade County",
     summary: "Organized specialty exterior work for contemporary, coastal, Mediterranean, and tropical residences across Miami-Dade.",
     areas: ["Aventura", "Sunny Isles Beach", "Golden Beach", "Bal Harbour", "Bay Harbor Islands", "Surfside", "Indian Creek", "Miami Beach", "Fisher Island", "North Bay Village", "Miami", "Brickell", "Coconut Grove", "Coral Gables", "Key Biscayne", "Pinecrest", "Palmetto Bay", "Cutler Bay", "Kendall", "Doral", "Miami Lakes", "North Miami", "North Miami Beach", "Miami Shores", "Biscayne Park", "El Portal", "Homestead"],
-    link: "/stucco-miami",
-    linkText: "Miami stucco & exterior finishes",
-  },
-  {
-    name: "Florida Keys & Monroe County",
-    summary: "Select coastal exterior scopes are reviewed for properties throughout the Upper, Middle, and Lower Keys.",
-    areas: ["Key Largo", "Tavernier", "Islamorada", "Marathon", "Big Pine Key", "Key West"],
-  },
-  {
-    name: "Southwest Florida",
-    summary: "Qualifying residential exterior and specialty scopes may be considered across Southwest Florida.",
-    areas: ["Naples", "Marco Island", "Bonita Springs", "Estero", "Fort Myers", "Cape Coral"],
   },
 ]
 
@@ -39,8 +23,8 @@ const services = [
   "Stucco repair, EIFS support, and refined exterior finishes",
   "Travertine, tile, stone, and pool-deck improvements",
   "Outdoor living and residential exterior transformations",
-  "Concrete-related preparation and defined project support",
-  "Selective demolition, surface preparation, and finish support",
+  "Defined concrete surface preparation and finish-support scopes",
+  "Surface preparation and specialty finish support",
 ];
 
 export default function ServiceAreasPage() {
@@ -55,7 +39,7 @@ export default function ServiceAreasPage() {
           <nav className="hidden items-center gap-7 text-[11px] uppercase tracking-[0.16em] md:flex">
             <a href="/services" className="hover:text-[#C8A96B]">Services</a>
             <a href="/#about" className="hover:text-[#C8A96B]">About</a>
-            <a href="/#contact" className="rounded-full border border-[#C8A96B]/60 px-5 py-3 hover:bg-[#C8A96B] hover:text-[#0D1B2A]">Request Consultation</a>
+            <a href="/project-request" className="rounded-full border border-[#C8A96B]/60 px-5 py-3 hover:bg-[#C8A96B] hover:text-[#0D1B2A]">Request Consultation</a>
           </nav>
         </div>
       </header>
@@ -67,7 +51,7 @@ export default function ServiceAreasPage() {
           <p className="mt-10 max-w-3xl text-lg leading-8 text-white/70">
             Based in Boca Raton, VELLORI Build Group supports defined residential exterior and specialty construction scopes throughout South Florida. Qualifying projects elsewhere in Florida are reviewed individually.
           </p>
-          <a href="/#contact" className="mt-10 inline-flex items-center gap-3 bg-[#C8A96B] px-7 py-4 text-xs uppercase tracking-[0.20em] text-[#0D1B2A]">
+          <a href="/project-request" className="mt-10 inline-flex items-center gap-3 bg-[#C8A96B] px-7 py-4 text-xs uppercase tracking-[0.20em] text-[#0D1B2A]">
             Discuss Your Project <ArrowRight className="h-4 w-4" />
           </a>
         </div>
@@ -93,11 +77,6 @@ export default function ServiceAreasPage() {
                     </li>
                   ))}
                 </ul>
-                {region.link && (
-                  <a href={region.link} className="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-[#8A6A32]">
-                    {region.linkText} <ArrowRight className="h-4 w-4" />
-                  </a>
-                )}
               </article>
             ))}
           </div>
@@ -121,7 +100,7 @@ export default function ServiceAreasPage() {
               </div>
             ))}
             <p className="pt-3 text-sm leading-7 text-[#0D1B2A]/60">
-              VELLORI reviews each project by scope and location. Where licensing or permitting is required, work is performed only under the responsibility and coordination of the appropriately licensed contractor or trade.
+              VELLORI does not represent itself as a licensed General Contractor. Any work requiring a licensed contractor, licensed trade, or permit is considered only as a defined subcontracted or specialty scope under the control and responsibility of the appropriately licensed party.
             </p>
           </div>
         </div>
@@ -136,7 +115,7 @@ export default function ServiceAreasPage() {
           <div className="space-y-5 text-white/75">
             <a href="tel:+15618874653" className="flex items-center gap-4 hover:text-[#C8A96B]"><Phone className="h-5 w-5 text-[#C8A96B]" /> (561) 887-4653</a>
             <a href="mailto:info@velloribuild.com" className="flex items-center gap-4 hover:text-[#C8A96B]"><Mail className="h-5 w-5 text-[#C8A96B]" /> info@velloribuild.com</a>
-            <a href="/#contact" className="mt-6 inline-flex items-center gap-3 bg-[#C8A96B] px-7 py-4 text-xs uppercase tracking-[0.20em] text-[#0D1B2A]">
+            <a href="/project-request" className="mt-6 inline-flex items-center gap-3 bg-[#C8A96B] px-7 py-4 text-xs uppercase tracking-[0.20em] text-[#0D1B2A]">
               Request Consultation <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -145,6 +124,7 @@ export default function ServiceAreasPage() {
 
       <footer className="bg-[#08111c] px-6 py-9 text-center text-white">
         <p className="text-xs uppercase tracking-[0.25em] text-white/55">Building Excellence. Creating Legacies.</p>
+        <a href="/privacy" className="mt-4 inline-block text-xs text-white/45 underline underline-offset-4 hover:text-[#C8A96B]">Privacy Policy</a>
       </footer>
     </main>
   );

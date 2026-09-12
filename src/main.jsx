@@ -7,7 +7,8 @@ import TravertinePage from "./TravertinePage.jsx";
 import OutdoorLivingPage from "./OutdoorLivingPage.jsx";
 import ConcretePage from "./ConcretePage.jsx";
 import ServiceAreasPage from "./ServiceAreasPage.jsx";
-import LocalStuccoPage from "./LocalStuccoPage.jsx";
+import ProjectRequestPage from "./ProjectRequestPage.jsx";
+import PrivacyPage from "./PrivacyPage.jsx";
 import "./index.css";
 
 const path = window.location.pathname;
@@ -51,15 +52,12 @@ if (path === "/service-areas" || path === "/service-areas/") {
   Page = ServiceAreasPage;
 }
 
-if (
-  path === "/stucco-palm-beach" ||
-  path === "/stucco-palm-beach/" ||
-  path === "/stucco-fort-lauderdale" ||
-  path === "/stucco-fort-lauderdale/" ||
-  path === "/stucco-miami" ||
-  path === "/stucco-miami/"
-) {
-  Page = LocalStuccoPage;
+if (path === "/project-request" || path === "/project-request/") {
+  Page = ProjectRequestPage;
+}
+
+if (path === "/privacy" || path === "/privacy/") {
+  Page = PrivacyPage;
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(

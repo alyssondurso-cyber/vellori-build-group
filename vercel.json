@@ -50,28 +50,20 @@
       "destination": "/service-areas.html"
     },
     {
-      "source": "/stucco-palm-beach",
-      "destination": "/stucco-palm-beach.html"
+      "source": "/project-request",
+      "destination": "/project-request.html"
     },
     {
-      "source": "/stucco-palm-beach/",
-      "destination": "/stucco-palm-beach.html"
+      "source": "/project-request/",
+      "destination": "/project-request.html"
     },
     {
-      "source": "/stucco-fort-lauderdale",
-      "destination": "/stucco-fort-lauderdale.html"
+      "source": "/privacy",
+      "destination": "/privacy.html"
     },
     {
-      "source": "/stucco-fort-lauderdale/",
-      "destination": "/stucco-fort-lauderdale.html"
-    },
-    {
-      "source": "/stucco-miami",
-      "destination": "/stucco-miami.html"
-    },
-    {
-      "source": "/stucco-miami/",
-      "destination": "/stucco-miami.html"
+      "source": "/privacy/",
+      "destination": "/privacy.html"
     },
     {
       "source": "/(.*)",
