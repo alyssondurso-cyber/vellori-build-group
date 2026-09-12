@@ -5,25 +5,35 @@ const regions = [
   {
     name: "Palm Beach County",
     summary: "Premium residential exterior work from Boca Raton through Palm Beach and the northern coastal communities.",
-    areas: ["Boca Raton", "Delray Beach", "Gulf Stream", "Highland Beach", "Manalapan", "Palm Beach", "West Palm Beach", "Palm Beach Gardens", "Jupiter", "Jupiter Island"],
+    areas: ["Boca Raton", "Highland Beach", "Delray Beach", "Gulf Stream", "Boynton Beach", "Manalapan", "Lantana", "Lake Worth Beach", "Palm Beach", "West Palm Beach", "Palm Beach Shores", "Singer Island", "Riviera Beach", "North Palm Beach", "Palm Beach Gardens", "Juno Beach", "Jupiter", "Jupiter Inlet Colony", "Jupiter Island", "Wellington", "Royal Palm Beach", "Loxahatchee"],
     link: "/stucco-palm-beach",
     linkText: "Palm Beach stucco & exterior finishes",
   },
   {
     name: "Broward County",
     summary: "Exterior finish and renovation support for waterfront, luxury, and established residential properties throughout Broward.",
-    areas: ["Fort Lauderdale", "Las Olas Isles", "Harbor Beach", "Rio Vista", "Coral Ridge", "Lighthouse Point", "Pompano Beach", "Parkland", "Weston"],
+    areas: ["Deerfield Beach", "Hillsboro Beach", "Lighthouse Point", "Pompano Beach", "Lauderdale-by-the-Sea", "Sea Ranch Lakes", "Fort Lauderdale", "Las Olas Isles", "Harbor Beach", "Rio Vista", "Coral Ridge", "Oakland Park", "Wilton Manors", "Dania Beach", "Hollywood", "Hallandale Beach", "Davie", "Plantation", "Sunrise", "Weston", "Pembroke Pines", "Miramar", "Coral Springs", "Parkland", "Coconut Creek"],
     link: "/stucco-fort-lauderdale",
     linkText: "Fort Lauderdale stucco & exterior finishes",
   },
   {
     name: "Miami-Dade County",
     summary: "Organized specialty exterior work for contemporary, coastal, Mediterranean, and tropical residences across Miami-Dade.",
-    areas: ["Miami", "Miami Beach", "Bal Harbour", "Surfside", "Sunny Isles Beach", "Aventura", "Key Biscayne", "Coral Gables", "Coconut Grove", "Pinecrest"],
+    areas: ["Aventura", "Sunny Isles Beach", "Golden Beach", "Bal Harbour", "Bay Harbor Islands", "Surfside", "Indian Creek", "Miami Beach", "Fisher Island", "North Bay Village", "Miami", "Brickell", "Coconut Grove", "Coral Gables", "Key Biscayne", "Pinecrest", "Palmetto Bay", "Cutler Bay", "Kendall", "Doral", "Miami Lakes", "North Miami", "North Miami Beach", "Miami Shores", "Biscayne Park", "El Portal", "Homestead"],
     link: "/stucco-miami",
     linkText: "Miami stucco & exterior finishes",
   },
-];
+  {
+    name: "Florida Keys & Monroe County",
+    summary: "Select coastal exterior scopes are reviewed for properties throughout the Upper, Middle, and Lower Keys.",
+    areas: ["Key Largo", "Tavernier", "Islamorada", "Marathon", "Big Pine Key", "Key West"],
+  },
+  {
+    name: "Southwest Florida",
+    summary: "Qualifying residential exterior and specialty scopes may be considered across Southwest Florida.",
+    areas: ["Naples", "Marco Island", "Bonita Springs", "Estero", "Fort Myers", "Cape Coral"],
+  },
+]
 
 const services = [
   "Stucco repair, EIFS support, and refined exterior finishes",
@@ -55,7 +65,7 @@ export default function ServiceAreasPage() {
           <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">South Florida Service Areas</p>
           <h1 className="mt-8 max-w-5xl font-serif text-5xl leading-[1.04] md:text-7xl">Residential exterior services across South Florida.</h1>
           <p className="mt-10 max-w-3xl text-lg leading-8 text-white/70">
-            Based in Boca Raton, VELLORI Build Group supports defined residential exterior and specialty construction scopes across Palm Beach, Broward, and Miami-Dade counties.
+            Based in Boca Raton, VELLORI Build Group supports defined residential exterior and specialty construction scopes throughout South Florida. Qualifying projects elsewhere in Florida are reviewed individually.
           </p>
           <a href="/#contact" className="mt-10 inline-flex items-center gap-3 bg-[#C8A96B] px-7 py-4 text-xs uppercase tracking-[0.20em] text-[#0D1B2A]">
             Discuss Your Project <ArrowRight className="h-4 w-4" />
@@ -68,7 +78,7 @@ export default function ServiceAreasPage() {
           <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">Regional Coverage</p>
           <h2 className="mt-6 max-w-4xl font-serif text-4xl leading-tight md:text-6xl">Focused service for coastal and high-value residential communities.</h2>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-[#0D1B2A]/65">
-            Availability depends on project fit, scope, schedule, and location. We review each inquiry before confirming service coverage.
+            Availability depends on project fit, scope, schedule, travel, and location. South Florida is our primary service region, and qualifying projects elsewhere in Florida are considered individually.
           </p>
           <div className="mt-14 grid gap-6 lg:grid-cols-3">
             {regions.map((region) => (
@@ -83,9 +93,11 @@ export default function ServiceAreasPage() {
                     </li>
                   ))}
                 </ul>
-                <a href={region.link} className="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-[#8A6A32]">
-                  {region.linkText} <ArrowRight className="h-4 w-4" />
-                </a>
+                {region.link && (
+                  <a href={region.link} className="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-[#8A6A32]">
+                    {region.linkText} <ArrowRight className="h-4 w-4" />
+                  </a>
+                )}
               </article>
             ))}
           </div>
@@ -118,7 +130,7 @@ export default function ServiceAreasPage() {
       <section className="bg-[#0D1B2A] px-6 py-24 text-white lg:px-10">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">Start in Boca Raton. Serve South Florida.</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">Based in Boca Raton. Serving South Florida.</p>
             <h2 className="mt-6 font-serif text-4xl md:text-6xl">Tell us where and what you are planning.</h2>
           </div>
           <div className="space-y-5 text-white/75">
