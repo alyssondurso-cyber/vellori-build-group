@@ -10,22 +10,57 @@ import ServiceAreasPage from "./ServiceAreasPage.jsx";
 import LocalStuccoPage from "./LocalStuccoPage.jsx";
 import "./index.css";
 
-const path = window.location.pathname.replace(/\/$/, "") || "/";
+const path = window.location.pathname;
 
-const routes = {
-  "/": App,
-  "/services": ServicesPage,
-  "/stucco-boca-raton": StuccoPage,
-  "/travertine-boca-raton": TravertinePage,
-  "/outdoor-living-boca-raton": OutdoorLivingPage,
-  "/concrete-boca-raton": ConcretePage,
-  "/service-areas": ServiceAreasPage,
-  "/stucco-palm-beach": LocalStuccoPage,
-  "/stucco-fort-lauderdale": LocalStuccoPage,
-  "/stucco-miami": LocalStuccoPage,
-};
+let Page = App;
 
-const Page = routes[path] || App;
+if (path === "/services" || path === "/services/") {
+  Page = ServicesPage;
+}
+
+if (
+  path === "/stucco-boca-raton" ||
+  path === "/stucco-boca-raton/"
+) {
+  Page = StuccoPage;
+}
+
+if (
+  path === "/travertine-boca-raton" ||
+  path === "/travertine-boca-raton/"
+) {
+  Page = TravertinePage;
+}
+
+if (
+  path === "/outdoor-living-boca-raton" ||
+  path === "/outdoor-living-boca-raton/"
+) {
+  Page = OutdoorLivingPage;
+}
+
+if (
+  path === "/concrete-boca-raton" ||
+  path === "/concrete-boca-raton/"
+) {
+  Page = ConcretePage;
+}
+
+
+if (path === "/service-areas" || path === "/service-areas/") {
+  Page = ServiceAreasPage;
+}
+
+if (
+  path === "/stucco-palm-beach" ||
+  path === "/stucco-palm-beach/" ||
+  path === "/stucco-fort-lauderdale" ||
+  path === "/stucco-fort-lauderdale/" ||
+  path === "/stucco-miami" ||
+  path === "/stucco-miami/"
+) {
+  Page = LocalStuccoPage;
+}
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
