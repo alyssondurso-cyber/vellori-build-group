@@ -134,7 +134,7 @@ const areas = [
  export default function ServicesPage() {
   useEffect(() => {
     document.title =
-      "Residential Services in Boca Raton | VELLORI Build Group";
+      "Residential Services Across South Florida | VELLORI Build Group";
 
     let description = document.querySelector('meta[name="description"]');
 
