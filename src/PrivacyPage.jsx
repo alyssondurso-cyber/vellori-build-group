@@ -13,7 +13,7 @@ const sections = [
   },
   {
     title: "Forms and service providers",
-    text: "Our project request form is provided through Jotform. Information submitted through that form is processed and stored using Jotform's services. Other service providers may support website hosting, email, security, and business operations only as needed to provide those services.",
+    text: "Our project request form uses a secure third-party processing service. Information submitted through that form is processed and stored only as needed to manage the inquiry. Other service providers may support website hosting, email, security, and business operations only as needed to provide those services.",
   },
   {
     title: "Sharing and selling",
