@@ -2,15 +2,59 @@ import React, { useState } from "react";
 import { ArrowRight, CalendarDays, Camera, Mail, Phone } from "lucide-react";
 import VelloriLogo from "./VelloriLogo.jsx";
 
-const FORM_ID = "262545441554054";
-
 const inputClass = "mt-2 w-full border border-[#0D1B2A]/15 bg-[#F8F5EE] px-4 py-3 text-sm outline-none transition focus:border-[#C8A96B] focus:ring-1 focus:ring-[#C8A96B]";
 const labelClass = "text-xs font-medium uppercase tracking-[0.13em] text-[#0D1B2A]/70";
 
+async function preparePhoto(file) {
+  if (!file.type.startsWith("image/")) throw new Error("Please upload image files only.");
+  const bitmap = await createImageBitmap(file);
+  const scale = Math.min(1, 1600 / Math.max(bitmap.width, bitmap.height));
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.round(bitmap.width * scale);
+  canvas.height = Math.round(bitmap.height * scale);
+  canvas.getContext("2d").drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+  const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.78));
+  if (!blob) throw new Error("We could not prepare one of the photos.");
+  const content = await new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result).split(",")[1]);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
+  return { filename: file.name.replace(/\.[^.]+$/, "") + ".jpg", content };
+}
+
 export default function ProjectRequestPage() {
   const [visitDate, setVisitDate] = useState("");
-  const [visitYear = "", visitMonth = "", visitDay = ""] = visitDate.split("-");
+  const [status, setStatus] = useState("idle");
+  const [error, setError] = useState("");
   const submitted = new URLSearchParams(window.location.search).get("submitted") === "1";
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setStatus("sending");
+    setError("");
+    try {
+      const form = event.currentTarget;
+      const data = new FormData(form);
+      const photoFiles = data.getAll("photos").filter((file) => file?.size);
+      if (photoFiles.length > 3) throw new Error("Please select up to 3 photos.");
+      const attachments = await Promise.all(photoFiles.map(preparePhoto));
+      data.delete("photos");
+      const fields = Object.fromEntries(data.entries());
+      const response = await fetch("/api/project-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fields, attachments }),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error || "We could not send your request. Please try again.");
+      window.location.assign("/project-request?submitted=1");
+    } catch (submissionError) {
+      setError(submissionError.message || "We could not send your request. Please call or email VELLORI.");
+      setStatus("error");
+    }
+  }
 
   return (
     <main className="min-h-screen bg-[#F3EFE6] text-[#0D1B2A]">
@@ -37,45 +81,45 @@ export default function ProjectRequestPage() {
               <a href="/" className="mt-8 inline-flex items-center gap-3 bg-[#0D1B2A] px-7 py-4 text-xs uppercase tracking-[0.20em] text-white">Return to Home <ArrowRight className="h-4 w-4"/></a>
             </div>
           ) : (
-          <form action={`https://submit.jotform.com/submit/${FORM_ID}`} method="post" encType="multipart/form-data" className="border border-[#0D1B2A]/10 bg-white p-6 shadow-[0_18px_60px_rgba(13,27,42,0.08)] sm:p-9 md:p-12">
-            <input type="hidden" name="formID" value={FORM_ID}/>
+          <form onSubmit={handleSubmit} className="border border-[#0D1B2A]/10 bg-white p-6 shadow-[0_18px_60px_rgba(13,27,42,0.08)] sm:p-9 md:p-12">
             <input type="text" name="website" tabIndex="-1" autoComplete="off" className="hidden" aria-hidden="true"/>
 
             <div className="border-b border-[#0D1B2A]/10 pb-8">
               <p className="text-xs uppercase tracking-[0.30em] text-[#C8A96B]">01 · Contact &amp; Property</p>
               <div className="mt-7 grid gap-5 sm:grid-cols-2">
-                <label className={labelClass}>First name *<input className={inputClass} type="text" name="q3_q3_fullname1[first]" required autoComplete="given-name"/></label>
-                <label className={labelClass}>Last name *<input className={inputClass} type="text" name="q3_q3_fullname1[last]" required autoComplete="family-name"/></label>
-                <label className={labelClass}>Mobile phone *<input className={inputClass} type="tel" name="q4_q4_phone2[full]" required placeholder="(561) 887-4653" autoComplete="tel"/></label>
-                <label className={labelClass}>Email *<input className={inputClass} type="email" name="q5_q5_email3" required autoComplete="email"/></label>
-                <label className={labelClass}>Project city or ZIP code *<input className={inputClass} type="text" name="q7_q7_textbox5" required autoComplete="postal-code"/></label>
-                <label className={labelClass}>Street address (optional)<input className={inputClass} type="text" name="q8_q8_address6[addr_line1]" autoComplete="street-address"/></label>
+                <label className={labelClass}>First name *<input className={inputClass} type="text" name="firstName" required autoComplete="given-name"/></label>
+                <label className={labelClass}>Last name *<input className={inputClass} type="text" name="lastName" required autoComplete="family-name"/></label>
+                <label className={labelClass}>Mobile phone *<input className={inputClass} type="tel" name="phone" required placeholder="(561) 887-4653" autoComplete="tel"/></label>
+                <label className={labelClass}>Email *<input className={inputClass} type="email" name="email" required autoComplete="email"/></label>
+                <label className={labelClass}>Project city or ZIP code *<input className={inputClass} type="text" name="cityZip" required autoComplete="postal-code"/></label>
+                <label className={labelClass}>Street address (optional)<input className={inputClass} type="text" name="address" autoComplete="street-address"/></label>
               </div>
-              <fieldset className="mt-6"><legend className={labelClass}>Preferred contact method *</legend><div className="mt-3 flex flex-wrap gap-5 text-sm">{["Text message","Phone call","Email"].map(value=><label key={value} className="flex items-center gap-2"><input type="radio" name="q6_q6_radio4" value={value} required className="accent-[#C8A96B]"/>{value}</label>)}</div></fieldset>
-              <fieldset className="mt-6"><legend className={labelClass}>Property type *</legend><div className="mt-3 flex flex-wrap gap-5 text-sm">{["Residential","Commercial"].map(value=><label key={value} className="flex items-center gap-2"><input type="radio" name="q9_q9_radio7" value={value} required className="accent-[#C8A96B]"/>{value}</label>)}</div></fieldset>
+              <fieldset className="mt-6"><legend className={labelClass}>Preferred contact method *</legend><div className="mt-3 flex flex-wrap gap-5 text-sm">{["Text message","Phone call","Email"].map(value=><label key={value} className="flex items-center gap-2"><input type="radio" name="contactMethod" value={value} required className="accent-[#C8A96B]"/>{value}</label>)}</div></fieldset>
+              <fieldset className="mt-6"><legend className={labelClass}>Property type *</legend><div className="mt-3 flex flex-wrap gap-5 text-sm">{["Residential","Commercial"].map(value=><label key={value} className="flex items-center gap-2"><input type="radio" name="propertyType" value={value} required className="accent-[#C8A96B]"/>{value}</label>)}</div></fieldset>
             </div>
 
             <div className="border-b border-[#0D1B2A]/10 py-8">
               <p className="text-xs uppercase tracking-[0.30em] text-[#C8A96B]">02 · Project Details</p>
-              <fieldset className="mt-7"><legend className={labelClass}>How would you like us to help? *</legend><div className="mt-3 grid gap-3 sm:grid-cols-3">{["Send photos for a preliminary estimate","Request an on-site visit","Request a callback"].map(value=><label key={value} className="flex items-start gap-3 border border-[#0D1B2A]/10 p-4 text-sm leading-6"><input type="radio" name="q10_q10_radio8" value={value} required className="mt-1 accent-[#C8A96B]"/>{value}</label>)}</div></fieldset>
-              <label className={`${labelClass} mt-7 block`}>Primary service needed *<select className={inputClass} name="q12_q12_checkbox10[]" required defaultValue=""><option value="" disabled>Select a service</option>{["Stucco & exterior finishes","EIFS","Travertine, tile & natural stone","Pool deck","Outdoor living or deck","Concrete-related scope","Selective demolition or surface preparation","Drywall or finish support"].map(value=><option key={value} value={value}>{value}</option>)}</select></label>
-              <label className={`${labelClass} mt-7 block`}>Project description *<textarea className={`${inputClass} min-h-36 resize-y`} name="q13_q13_textarea11" required/></label>
+              <fieldset className="mt-7"><legend className={labelClass}>How would you like us to help? *</legend><div className="mt-3 grid gap-3 sm:grid-cols-3">{["Send photos for a preliminary estimate","Request an on-site visit","Request a callback"].map(value=><label key={value} className="flex items-start gap-3 border border-[#0D1B2A]/10 p-4 text-sm leading-6"><input type="radio" name="requestType" value={value} required className="mt-1 accent-[#C8A96B]"/>{value}</label>)}</div></fieldset>
+              <label className={`${labelClass} mt-7 block`}>Primary service needed *<select className={inputClass} name="service" required defaultValue=""><option value="" disabled>Select a service</option>{["Stucco & exterior finishes","EIFS","Travertine, tile & natural stone","Pool deck","Outdoor living or deck","Concrete-related scope","Selective demolition or surface preparation","Drywall or finish support"].map(value=><option key={value} value={value}>{value}</option>)}</select></label>
+              <label className={`${labelClass} mt-7 block`}>Project description *<textarea className={`${inputClass} min-h-36 resize-y`} name="description" required/></label>
               <div className="mt-7 grid gap-5 sm:grid-cols-2">
-                <label className={labelClass}>Estimated timeline *<select className={inputClass} name="q14_q14_radio12" required defaultValue=""><option value="" disabled>Select timeline</option>{["ASAP","1–4 weeks","1–3 months","3+ months","Planning only"].map(value=><option key={value} value={value}>{value}</option>)}</select></label>
-                <label className={labelClass}>Budget range<select className={inputClass} name="q15_q15_dropdown13" defaultValue=""><option value="">Not sure yet</option>{["Under $10,000","$10,000–$25,000","$25,000–$50,000","$50,000–$100,000","$100,000+"].map(value=><option key={value} value={value}>{value}</option>)}</select></label>
+                <label className={labelClass}>Estimated timeline *<select className={inputClass} name="timeline" required defaultValue=""><option value="" disabled>Select timeline</option>{["ASAP","1–4 weeks","1–3 months","3+ months","Planning only"].map(value=><option key={value} value={value}>{value}</option>)}</select></label>
+                <label className={labelClass}>Budget range<select className={inputClass} name="budget" defaultValue=""><option value="">Not sure yet</option>{["Under $10,000","$10,000–$25,000","$25,000–$50,000","$50,000–$100,000","$100,000+"].map(value=><option key={value} value={value}>{value}</option>)}</select></label>
               </div>
-              <label className={`${labelClass} mt-7 block`}>Upload project photos or videos<input className={`${inputClass} file:mr-4 file:border-0 file:bg-[#0D1B2A] file:px-4 file:py-2 file:text-xs file:uppercase file:tracking-[0.12em] file:text-white`} type="file" name="file" multiple accept="image/*,video/*"/></label>
+              <label className={`${labelClass} mt-7 block`}>Upload up to 3 project photos<input className={`${inputClass} file:mr-4 file:border-0 file:bg-[#0D1B2A] file:px-4 file:py-2 file:text-xs file:uppercase file:tracking-[0.12em] file:text-white`} type="file" name="photos" multiple accept="image/jpeg,image/png,image/webp"/></label>
             </div>
 
             <div className="pt-8">
               <p className="text-xs uppercase tracking-[0.30em] text-[#C8A96B]">03 · Visit or Callback</p>
               <div className="mt-7 grid gap-5 sm:grid-cols-3">
-                <label className={labelClass}>Preferred visit date<input className={inputClass} type="date" value={visitDate} onChange={(event)=>setVisitDate(event.target.value)}/><input type="hidden" name="q18_q18_datetime16[month]" value={visitMonth}/><input type="hidden" name="q18_q18_datetime16[day]" value={visitDay}/><input type="hidden" name="q18_q18_datetime16[year]" value={visitYear}/></label>
-                <label className={labelClass}>Preferred day<select className={inputClass} name="q21_q21_dropdown19" defaultValue=""><option value="">Select day</option>{["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"].map(value=><option key={value} value={value}>{value}</option>)}</select></label>
-                <label className={labelClass}>Preferred time<select className={inputClass} name="q22_q22_radio20" defaultValue=""><option value="">Select time</option>{["Morning","Afternoon","Evening","Any time"].map(value=><option key={value} value={value}>{value}</option>)}</select></label>
+                <label className={labelClass}>Preferred visit date<input className={inputClass} type="date" name="visitDate" value={visitDate} onChange={(event)=>setVisitDate(event.target.value)}/></label>
+                <label className={labelClass}>Preferred day<select className={inputClass} name="preferredDay" defaultValue=""><option value="">Select day</option>{["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"].map(value=><option key={value} value={value}>{value}</option>)}</select></label>
+                <label className={labelClass}>Preferred time<select className={inputClass} name="preferredTime" defaultValue=""><option value="">Select time</option>{["Morning","Afternoon","Evening","Any time"].map(value=><option key={value} value={value}>{value}</option>)}</select></label>
               </div>
-              <label className="mt-8 flex items-start gap-3 text-sm leading-6 text-[#0D1B2A]/70"><input type="checkbox" name="q24_q24_checkbox22[]" value="I agree that VELLORI may contact me by phone, text message, or email about this project." required className="mt-1 accent-[#C8A96B]"/>I agree that VELLORI may contact me by phone, text message, or email about this project.</label>
-              <button type="submit" className="mt-9 inline-flex w-full items-center justify-center gap-3 bg-[#0D1B2A] px-7 py-5 text-xs uppercase tracking-[0.20em] text-white transition hover:bg-[#C8A96B] hover:text-[#0D1B2A]">Send My Project Request <ArrowRight className="h-4 w-4"/></button>
+              <label className="mt-8 flex items-start gap-3 text-sm leading-6 text-[#0D1B2A]/70"><input type="checkbox" name="consent" value="accepted" required className="mt-1 accent-[#C8A96B]"/>I agree that VELLORI may contact me by phone, text message, or email about this project.</label>
+              {error && <p role="alert" className="mt-6 border border-red-700/20 bg-red-50 px-4 py-3 text-sm text-red-800">{error} You can also call <a className="underline" href="tel:+15618874653">(561) 887-4653</a> or email <a className="underline" href="mailto:info@velloribuild.com">info@velloribuild.com</a>.</p>}
+              <button type="submit" disabled={status === "sending"} className="mt-9 inline-flex w-full items-center justify-center gap-3 bg-[#0D1B2A] px-7 py-5 text-xs uppercase tracking-[0.20em] text-white transition hover:bg-[#C8A96B] hover:text-[#0D1B2A] disabled:cursor-wait disabled:opacity-60">{status === "sending" ? "Sending Request…" : "Send My Project Request"} <ArrowRight className="h-4 w-4"/></button>
             </div>
           </form>
           )}
