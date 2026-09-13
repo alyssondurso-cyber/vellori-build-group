@@ -26,7 +26,7 @@ export default async function handler(request, response) {
   });
 
   const ownerEmail = await sendEmail({
-    from: "VELLORI Website <projects@velloribuild.com>", to: ["info@velloribuild.com"], reply_to: fields.email,
+    from: "VELLORI Website <projects@forms.velloribuild.com>", to: ["info@velloribuild.com"], reply_to: fields.email,
     subject: `New ${fields.service} request — ${fields.cityZip}`,
     html: `<div style="font-family:Arial,sans-serif;max-width:720px;margin:auto"><div style="background:#0D1B2A;color:#fff;padding:26px"><div style="color:#C8A96B;letter-spacing:3px;font-size:12px">VELLORI BUILD GROUP</div><h1 style="font-family:Georgia,serif;font-weight:400">New project request</h1></div><table style="width:100%;border-collapse:collapse;background:#F8F5EE">${details}</table></div>`,
     attachments: attachments.map(({ filename, content }) => ({ filename: String(filename).slice(0, 120), content })),
@@ -34,7 +34,7 @@ export default async function handler(request, response) {
   if (!ownerEmail.ok) return response.status(502).json({ error: "We could not deliver your request. Please call or email VELLORI." });
 
   await sendEmail({
-    from: "VELLORI Build Group <projects@velloribuild.com>", to: [fields.email], reply_to: "info@velloribuild.com",
+    from: "VELLORI Build Group <projects@forms.velloribuild.com>", to: [fields.email], reply_to: "info@velloribuild.com",
     subject: "We received your VELLORI project request",
     html: `<div style="font-family:Arial,sans-serif;max-width:640px;margin:auto;color:#0D1B2A"><div style="background:#0D1B2A;color:#fff;padding:30px"><div style="color:#C8A96B;letter-spacing:3px;font-size:12px">VELLORI BUILD GROUP</div><h1 style="font-family:Georgia,serif;font-weight:400">Thank you, ${escapeHtml(fields.firstName)}.</h1></div><div style="padding:30px;background:#F8F5EE;line-height:1.7"><p>We received your project request and will review the details you shared.</p><p>Our team will contact you through your preferred method: <strong>${escapeHtml(fields.contactMethod)}</strong>.</p><p>For immediate assistance, call <a href="tel:+15618874653">(561) 887-4653</a> or reply to this email.</p><p style="margin-top:28px;color:#75613b">Building Excellence. Creating Legacies.</p></div></div>`,
   });
