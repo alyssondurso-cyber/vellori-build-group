@@ -53,7 +53,7 @@ export default function StuccoPage() {
           <a href="/"><VelloriLogo compact /></a>
 
           <a
-            href="/#contact"
+            href="/project-request"
             className="hidden rounded-full border border-[#C8A96B]/60 px-5 py-3 text-xs uppercase tracking-[0.20em] transition hover:bg-[#C8A96B] hover:text-[#0D1B2A] md:inline-flex"
           >
             Request Consultation
@@ -79,7 +79,7 @@ export default function StuccoPage() {
           </p>
 
           <a
-            href="/#contact"
+            href="/project-request"
             className="mt-10 inline-flex items-center gap-3 bg-[#C8A96B] px-7 py-4 text-xs uppercase tracking-[0.20em] text-[#0D1B2A]"
           >
             Request Project Consultation
@@ -254,7 +254,7 @@ surrounding South Florida communities.
             </div>
 
             <a
-              href="/#contact"
+              href="/project-request"
               className="mt-6 inline-flex items-center gap-3 bg-[#C8A96B] px-7 py-4 text-xs uppercase tracking-[0.20em] text-[#0D1B2A]"
             >
               Request Consultation
