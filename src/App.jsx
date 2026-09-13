@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Phone, Mail, CheckCircle2, Menu } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Mail, CheckCircle2, Menu, Camera, CalendarDays } from "lucide-react";
 import VelloriLogo from "./VelloriLogo.jsx";
 
 const NAVY = "#0D1B2A";
@@ -19,20 +19,20 @@ const services = [
 
 const projects = [
   {
-    title: "Boca Raton Outdoor Living Transformation",
-    tag: "Travertine • Pool Deck • Exterior Living",
+    title: "Refined Outdoor Living",
+    tag: "Project Inspiration • Travertine • Exterior Living",
     image:
       "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1600&auto=format&fit=crop",
   },
   {
-    title: "Palm Beach Exterior Refinement",
-    tag: "Facade • Paint • Architectural Finish",
+    title: "Architectural Exterior Finishes",
+    tag: "Project Inspiration • Facade • Refined Finish",
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1600&auto=format&fit=crop",
   },
   {
-    title: "Miami Modern Pool Environment",
-    tag: "Pool Deck • Stone • Outdoor Upgrade",
+    title: "Modern Pool Environments",
+    tag: "Project Inspiration • Pool Deck • Stone",
     image:
       "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=1600&auto=format&fit=crop",
   },
@@ -82,15 +82,19 @@ export default function VelloriWebsite() {
           </nav>
           {/* Mobile Button */}
 <button
+  type="button"
   onClick={() => setMobileMenu(!mobileMenu)}
   className="text-white lg:hidden"
+  aria-label={mobileMenu ? "Close navigation menu" : "Open navigation menu"}
+  aria-expanded={mobileMenu}
+  aria-controls="mobile-navigation"
 >
  <Menu size={22} />
 </button>
 
 {/* Mobile Menu */}
 {mobileMenu && (
-  <div className="absolute left-0 top-full w-full bg-[#0D1B2A] border-t border-white/10 flex flex-col items-center gap-6 py-8 text-sm uppercase tracking-[0.18em] text-white lg:hidden">
+  <div id="mobile-navigation" className="absolute left-0 top-full w-full bg-[#0D1B2A] border-t border-white/10 flex flex-col items-center gap-6 py-8 text-sm uppercase tracking-[0.18em] text-white lg:hidden">
     <a href="#home" onClick={() => setMobileMenu(false)}>Home</a>
     <a href="/services" onClick={() => setMobileMenu(false)}>Services</a>
     <a href="#projects" onClick={() => setMobileMenu(false)}>Projects</a>
@@ -98,7 +102,7 @@ export default function VelloriWebsite() {
     <a href="#contact" onClick={() => setMobileMenu(false)}>Contact</a>
   </div>
 )}
-          <a href="#contact" className="hidden rounded-full border border-[#C8A96B]/60 px-5 py-2 text-xs uppercase tracking-[0.22em] text-white transition hover:bg-[#C8A96B]/95 hover:text-[#0D1B2A] md:inline-flex">
+          <a href="/project-request" className="hidden rounded-full border border-[#C8A96B]/60 px-5 py-2 text-xs uppercase tracking-[0.22em] text-white transition hover:bg-[#C8A96B]/95 hover:text-[#0D1B2A] md:inline-flex">
             Request Consultation
           </a>
         </div>
@@ -196,10 +200,10 @@ export default function VelloriWebsite() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 flex flex-col justify-between gap-10 md:flex-row md:items-end">
             <div>
-              <SectionLabel>Projects</SectionLabel>
-              <h2 className="font-serif text-4xl md:text-6xl">Before, after, and beyond ordinary.</h2>
+              <SectionLabel>Project Vision</SectionLabel>
+              <h2 className="font-serif text-4xl md:text-6xl">Exterior possibilities shaped around your property.</h2>
             </div>
-            <p className="max-w-md text-sm leading-7 text-white/65">A curated portfolio structure designed to build trust, show transformation, and support future Google Ads and local SEO campaigns.</p>
+            <p className="max-w-md text-sm leading-7 text-white/65">Representative imagery illustrating the types of refined exterior environments VELLORI can help execute. Completed VELLORI projects will be added as photography becomes available.</p>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
             {projects.map((project) => (
@@ -269,22 +273,25 @@ export default function VelloriWebsite() {
               <div className="flex items-center gap-4"><Phone className="h-5 w-5 text-[#C8A96B]" /> Request by consultation form</div>
             </div>
           </div>
-          <form action="/project-request" method="get" className="bg-[#F3EFE6] p-11 text-[#0D1B2A] md:p-14">
-            <div className="grid gap-5 md:grid-cols-2">
-              <input className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B]" placeholder="Name" />
-              <input className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B]" placeholder="Phone" />
-              <input className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B] md:col-span-2" placeholder="Email" />
-              <input className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B] md:col-span-2" placeholder="Project Location" />
-              <select className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B] md:col-span-2">
-                <option>Service Needed</option>
-                {services.map((service) => <option key={service.title}>{service.title}</option>)}
-              </select>
-              <textarea className="min-h-36 border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B] md:col-span-2" placeholder="Tell us about your project" />
+          <div className="bg-[#F3EFE6] p-11 text-[#0D1B2A] md:p-14">
+            <p className="text-xs uppercase tracking-[0.28em] text-[#8A6A32]">Choose the easiest next step</p>
+            <div className="mt-7 grid gap-4">
+              {[
+                [Camera, "Send project photos", "Share the existing condition for an initial review."],
+                [CalendarDays, "Request a site visit", "Tell us your preferred date and time of day."],
+                [Phone, "Request a callback", "Choose when you would like our team to contact you."],
+              ].map(([Icon, title, text]) => (
+                <a key={title} href="/project-request" className="group flex items-start gap-4 border border-[#0D1B2A]/10 bg-white p-5 transition hover:border-[#C8A96B] focus:outline-none focus:ring-2 focus:ring-[#C8A96B]">
+                  <Icon className="mt-1 h-5 w-5 flex-none text-[#C8A96B]" />
+                  <span className="flex-1"><strong className="font-medium">{title}</strong><span className="mt-1 block text-sm leading-6 text-[#0D1B2A]/60">{text}</span></span>
+                  <ArrowRight className="mt-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+              ))}
             </div>
-            <button type="submit" className="mt-7 inline-flex w-full items-center justify-center gap-3 bg-[#0D1B2A] px-7 py-4 text-sm uppercase tracking-[0.22em] text-white transition hover:bg-[#C8A96B] hover:text-[#0D1B2A]">
-              Request Estimate <ArrowRight className="h-4 w-4" />
-            </button>
-          </form>
+            <a href="/project-request" className="mt-7 inline-flex w-full items-center justify-center gap-3 bg-[#0D1B2A] px-7 py-4 text-sm uppercase tracking-[0.22em] text-white transition hover:bg-[#C8A96B] hover:text-[#0D1B2A]">
+              Open Secure Project Form <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </section>
 

@@ -180,7 +180,7 @@ const areas = [
           <a href="/"><VelloriLogo compact /></a>
 
           <a
-            href="/#contact"
+            href="/project-request"
             className="hidden rounded-full border border-[#C8A96B]/60 px-5 py-3 text-xs uppercase tracking-[0.20em] transition hover:bg-[#C8A96B] hover:text-[#0D1B2A] md:inline-flex"
           >
             Request Consultation
@@ -283,6 +283,12 @@ demolition, concrete-related scopes, and specialty finishes.
               Our team can review your project scope and discuss the appropriate
               next steps for execution.
             </p>
+            <p className="mt-5 max-w-xl text-sm leading-7 text-white/50">
+              VELLORI does not represent itself as a licensed General Contractor.
+              Regulated or permitted work is considered only as a defined specialty
+              or subcontracted scope under the control and responsibility of the
+              appropriately licensed party.
+            </p>
           </div>
 
           <div className="space-y-5 lg:pt-10">
@@ -302,7 +308,7 @@ demolition, concrete-related scopes, and specialty finishes.
             </div>
 
             <a
-              href="/#contact"
+              href="/project-request"
               className="mt-6 inline-flex items-center gap-3 bg-[#C8A96B] px-7 py-4 text-xs uppercase tracking-[0.20em] text-[#0D1B2A]"
             >
               Request Consultation
