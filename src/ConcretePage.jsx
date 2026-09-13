@@ -9,6 +9,9 @@ import {
 import VelloriLogo from "./VelloriLogo.jsx";
 
 const concreteServices = [
+  "Concrete Resurfacing & Overlay Support",
+  "Porch & Step Surface Improvements",
+  "Concrete Surface Refinishing",
   "Concrete-Related Project Support",
   "Formwork & Preparation Support",
   "Slab & Surface Preparation",
@@ -66,7 +69,7 @@ export default function ConcretePage() {
           </p>
 
           <h1 className="mt-8 max-w-5xl font-serif text-5xl leading-[1.04] md:text-7xl">
-            Concrete Project Support & Exterior Improvements in Boca Raton
+            Concrete Resurfacing & Exterior Surface Improvements in Boca Raton
           </h1>
 
           <p className="mt-10 max-w-3xl text-lg leading-8 text-white/70">
@@ -117,6 +120,67 @@ export default function ConcretePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-6 py-24 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
+            <div>
+              <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">
+                Concrete Surface Renewal
+              </p>
+
+              <h2 className="mt-5 font-serif text-4xl leading-tight md:text-6xl">
+                Concrete resurfacing and overlay support for refined exterior spaces.
+              </h2>
+
+              <p className="mt-8 text-lg leading-8 text-[#0D1B2A]/65">
+                Existing concrete does not always require complete replacement.
+                Depending on its condition, preparation, repairs, resurfacing,
+                overlays, and finish improvements may renew the appearance and
+                function of porches, steps, patios, walkways, and other exterior
+                surfaces.
+              </p>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2">
+              {[
+                [
+                  "Surface Evaluation & Preparation",
+                  "Existing conditions, adhesion, cracks, transitions, drainage, and surrounding finishes are reviewed before the appropriate surface approach is defined.",
+                ],
+                [
+                  "Resurfacing & Overlay Support",
+                  "Surface preparation and finish-system support for eligible exterior concrete areas, based on the condition and requirements of the existing substrate.",
+                ],
+                [
+                  "Porches, Steps, Patios & Walkways",
+                  "Exterior concrete surfaces are approached with attention to access, transitions, edges, adjacent materials, appearance, and everyday use.",
+                ],
+                [
+                  "Repair, Refinishing & Transitions",
+                  "Defined repairs and surface refinishing are coordinated to improve consistency while protecting nearby architectural and landscape elements.",
+                ],
+              ].map(([title, description]) => (
+                <article
+                  key={title}
+                  className="border border-[#0D1B2A]/10 bg-[#F3EFE6] p-7"
+                >
+                  <h3 className="font-serif text-2xl">{title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-[#0D1B2A]/65">
+                    {description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <p className="mt-10 border-l-2 border-[#C8A96B] pl-5 text-sm leading-7 text-[#0D1B2A]/60">
+            Final scope depends on existing conditions, selected materials,
+            access, project requirements, and any permit or appropriately
+            licensed-party coordination that may apply.
+          </p>
         </div>
       </section>
 
