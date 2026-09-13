@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ArrowRight, MapPin, Phone, Mail, CheckCircle2 } from "lucide-react";
 import VelloriLogo from "./VelloriLogo.jsx";
 
@@ -29,6 +29,42 @@ const services = [
 ];
 
 export default function ServiceAreasPage() {
+  useEffect(() => {
+    document.title = "South Florida Service Areas | VELLORI Build Group";
+
+    let description = document.querySelector('meta[name="description"]');
+
+    if (!description) {
+      description = document.createElement("meta");
+      description.setAttribute("name", "description");
+      document.head.appendChild(description);
+    }
+
+    description.setAttribute(
+      "content",
+      "Explore VELLORI Build Group service areas across Palm Beach, Broward, and Miami-Dade for premium residential exterior improvements, stucco, outdoor living, tile, stone, and specialty finishes."
+    );
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+
+    canonical.setAttribute(
+      "href",
+      "https://velloribuild.com/service-areas"
+    );
+
+    return () => {
+      document.title =
+        "VELLORI Build Group | Premium Exterior Improvements & Outdoor Living in Boca Raton";
+      canonical?.setAttribute("href", "https://velloribuild.com/");
+    };
+  }, []);
+
   return (
     <main className="min-h-screen bg-[#F3EFE6] text-[#0D1B2A]">
       <header className="bg-[#0D1B2A] px-6 py-7 text-white lg:px-10">
