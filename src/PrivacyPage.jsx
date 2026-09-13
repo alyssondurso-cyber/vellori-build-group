@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Mail, Phone } from "lucide-react";
 import VelloriLogo from "./VelloriLogo.jsx";
 
@@ -13,7 +13,7 @@ const sections = [
   },
   {
     title: "Forms and service providers",
-    text: "Our project request form uses a secure third-party processing service. Information submitted through that form is processed and stored only as needed to manage the inquiry. Other service providers may support website hosting, email, security, and business operations only as needed to provide those services.",
+    text: "Our project request form is processed through our website infrastructure. Service providers may support website hosting, email delivery, security, and business operations only as needed to receive, protect, and manage the inquiry.",
   },
   {
     title: "Sharing and selling",
@@ -34,6 +34,35 @@ const sections = [
 ];
 
 export default function PrivacyPage() {
+  useEffect(() => {
+    document.title = "Privacy Policy | VELLORI Build Group";
+
+    let description = document.querySelector('meta[name="description"]');
+    if (!description) {
+      description = document.createElement("meta");
+      description.setAttribute("name", "description");
+      document.head.appendChild(description);
+    }
+    description.setAttribute(
+      "content",
+      "Read the VELLORI Build Group privacy policy for information submitted through velloribuild.com and the project request form."
+    );
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", "https://velloribuild.com/privacy");
+
+    return () => {
+      document.title =
+        "VELLORI Build Group | Premium Exterior Improvements & Outdoor Living in Boca Raton";
+      canonical?.setAttribute("href", "https://velloribuild.com/");
+    };
+  }, []);
+
   return (
     <main className="min-h-screen bg-[#F3EFE6] text-[#0D1B2A]">
       <header className="bg-[#0D1B2A] px-6 py-7 text-white lg:px-10">
