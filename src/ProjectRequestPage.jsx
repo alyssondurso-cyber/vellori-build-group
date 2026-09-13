@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowRight, CalendarDays, Camera, Mail, Phone } from "lucide-react";
 import VelloriLogo from "./VelloriLogo.jsx";
 
@@ -29,6 +29,44 @@ export default function ProjectRequestPage() {
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
   const submitted = new URLSearchParams(window.location.search).get("submitted") === "1";
+
+  useEffect(() => {
+    document.title = "Request a Project Estimate | VELLORI Build Group";
+
+    let description = document.querySelector('meta[name="description"]');
+    if (!description) {
+      description = document.createElement("meta");
+      description.setAttribute("name", "description");
+      document.head.appendChild(description);
+    }
+    description.setAttribute(
+      "content",
+      "Request a project estimate or site visit from VELLORI Build Group for premium residential exterior improvements, stucco, outdoor living, tile, stone, and specialty scopes across South Florida."
+    );
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", "https://velloribuild.com/project-request");
+
+    let robots = document.querySelector('meta[name="robots"]');
+    if (!robots) {
+      robots = document.createElement("meta");
+      robots.setAttribute("name", "robots");
+      document.head.appendChild(robots);
+    }
+    robots.setAttribute("content", submitted ? "noindex, follow" : "index, follow");
+
+    return () => {
+      document.title =
+        "VELLORI Build Group | Premium Exterior Improvements & Outdoor Living in Boca Raton";
+      canonical?.setAttribute("href", "https://velloribuild.com/");
+      robots?.setAttribute("content", "index, follow");
+    };
+  }, [submitted]);
 
   async function handleSubmit(event) {
     event.preventDefault();
