@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight, MapPin, Phone, Mail, CheckCircle2 } from "lucide-react";
+import VelloriLogo from "./VelloriLogo.jsx";
 
 const regions = [
   {
@@ -32,10 +33,7 @@ export default function ServiceAreasPage() {
     <main className="min-h-screen bg-[#F3EFE6] text-[#0D1B2A]">
       <header className="bg-[#0D1B2A] px-6 py-7 text-white lg:px-10">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
-          <a href="/" className="flex flex-col">
-            <span className="font-serif text-3xl tracking-[0.27em]">VELLORI</span>
-            <span className="mt-2 text-[9px] uppercase tracking-[0.28em] text-[#C8A96B]">Build Group</span>
-          </a>
+          <a href="/"><VelloriLogo compact /></a>
           <nav className="hidden items-center gap-7 text-[11px] uppercase tracking-[0.16em] md:flex">
             <a href="/services" className="hover:text-[#C8A96B]">Services</a>
             <a href="/#about" className="hover:text-[#C8A96B]">About</a>

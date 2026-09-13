@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import { ArrowRight, CheckCircle2, MapPin, Mail, Phone } from "lucide-react";
+import VelloriLogo from "./VelloriLogo.jsx";
 
 const serviceGroups = [
   {
     title: "Stucco & Exterior Finishes",
+    href: "/stucco-boca-raton",
     description:
       "Refined exterior finish solutions for residential properties, including stucco application, repairs, patching, surface preparation, lath-related preparation, smooth finishes, textured finishes, and exterior wall restoration.",
     items: [
@@ -22,6 +24,7 @@ const serviceGroups = [
   },
   {
     title: "Travertine, Tile & Stone",
+    href: "/travertine-boca-raton",
     description:
       "Premium installation and surface improvement for outdoor living areas, patios, pool decks, walkways, and residential exterior environments.",
     items: [
@@ -39,6 +42,7 @@ const serviceGroups = [
   },
   {
     title: "Outdoor Living",
+    href: "/outdoor-living-boca-raton",
     description:
       "Execution of sophisticated residential exterior environments designed around comfort, functionality, property value, and refined finishes.",
     items: [
@@ -54,6 +58,7 @@ const serviceGroups = [
   },
   {
     title: "Exterior Remodeling",
+    href: "/project-request",
     description:
       "Organized execution and finish work for residential exterior transformations throughout South Florida.",
     items: [
@@ -69,6 +74,7 @@ const serviceGroups = [
   },
   {
     title: "Concrete & Surface Preparation",
+    href: "/concrete-boca-raton",
     description:
       "Preparation and execution support for concrete-related residential scopes, exterior surfaces, and renovation projects.",
     items: [
@@ -84,6 +90,7 @@ const serviceGroups = [
   },
   {
     title: "Demolition & Project Preparation",
+    href: "/project-request",
     description:
       "Selective demolition and preparation services that help projects move into the next construction or finishing phase in an organized manner.",
     items: [
@@ -99,6 +106,7 @@ const serviceGroups = [
   },
   {
     title: "Interior & Finish Support",
+    href: "/project-request",
     description:
       "Selected residential finish and improvement scopes completed with the same attention to detail applied to VELLORI exterior projects.",
     items: [
@@ -169,14 +177,7 @@ const areas = [
     <main className="min-h-screen bg-[#F3EFE6] text-[#0D1B2A]">
       <header className="bg-[#0D1B2A] px-6 py-7 text-white lg:px-10">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
-          <a href="/" className="flex flex-col">
-            <span className="font-serif text-3xl tracking-[0.27em]">
-              VELLORI
-            </span>
-            <span className="mt-2 text-[9px] uppercase tracking-[0.28em] text-[#C8A96B]">
-              Build Group
-            </span>
-          </a>
+          <a href="/"><VelloriLogo compact /></a>
 
           <a
             href="/#contact"
@@ -211,49 +212,12 @@ demolition, concrete-related scopes, and specialty finishes.
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-7 md:grid-cols-2">
             {serviceGroups.map((group) => (
-              <article
+              <a
+                href={group.href}
                 key={group.title}
-                className="border border-[#0D1B2A]/10 bg-white p-8 md:p-10"
+                className="group block border border-[#0D1B2A]/10 bg-white p-8 transition hover:-translate-y-0.5 hover:border-[#C8A96B]/50 focus:outline-none focus:ring-2 focus:ring-[#C8A96B] md:p-10"
               >
-         {group.title === "Stucco & Exterior Finishes" ? (
-  <h2 className="font-serif text-3xl">
-    <a
-      href="/stucco-boca-raton"
-      className="transition hover:text-[#C8A96B]"
-    >
-      {group.title}
-    </a>
-  </h2>
-) : group.title === "Travertine, Tile & Stone" ? (
-  <h2 className="font-serif text-3xl">
-    <a
-      href="/travertine-boca-raton"
-      className="transition hover:text-[#C8A96B]"
-    >
-      {group.title}
-    </a>
-  </h2>
-) : group.title === "Outdoor Living" ? (
-  <h2 className="font-serif text-3xl">
-    <a
-      href="/outdoor-living-boca-raton"
-      className="transition hover:text-[#C8A96B]"
-    >
-      {group.title}
-    </a>
-  </h2>
-) : group.title === "Concrete & Structural Support" ? (
-  <h2 className="font-serif text-3xl">
-    <a
-      href="/concrete-boca-raton"
-      className="transition hover:text-[#C8A96B]"
-    >
-      {group.title}
-    </a>
-  </h2>
-) : (
-  <h2 className="font-serif text-3xl">{group.title}</h2>
-)}
+                <h2 className="font-serif text-3xl transition group-hover:text-[#9B7A3F]">{group.title}</h2>
 
                 <p className="mt-5 leading-7 text-[#0D1B2A]/65">
                   {group.description}
@@ -267,7 +231,8 @@ demolition, concrete-related scopes, and specialty finishes.
                     </div>
                   ))}
                 </div>
-              </article>
+                <span className="mt-8 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-[#8A6A32]">View details <ArrowRight className="h-4 w-4" /></span>
+              </a>
             ))}
           </div>
         </div>
