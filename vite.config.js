@@ -25,6 +25,15 @@ export default defineConfig({
           import.meta.dirname,
           "concrete-boca-raton.html"
         ),
+        serviceAreas: resolve(
+          import.meta.dirname,
+          "service-areas.html"
+        ),
+        projectRequest: resolve(
+          import.meta.dirname,
+          "project-request.html"
+        ),
+        privacy: resolve(import.meta.dirname, "privacy.html"),
       },
     },
   },

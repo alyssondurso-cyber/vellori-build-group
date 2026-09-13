@@ -42,6 +42,30 @@
       "destination": "/concrete-boca-raton.html"
     },
     {
+      "source": "/service-areas",
+      "destination": "/service-areas.html"
+    },
+    {
+      "source": "/service-areas/",
+      "destination": "/service-areas.html"
+    },
+    {
+      "source": "/project-request",
+      "destination": "/project-request.html"
+    },
+    {
+      "source": "/project-request/",
+      "destination": "/project-request.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/privacy/",
+      "destination": "/privacy.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

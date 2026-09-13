@@ -1,19 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Phone, Mail, CheckCircle2, Menu, X } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Mail, CheckCircle2, Menu } from "lucide-react";
+import VelloriLogo from "./VelloriLogo.jsx";
 
 const NAVY = "#0D1B2A";
 const GOLD = "#C8A96B";
 const SAND = "#F3EFE6";
 
 const services = [
-  "Luxury Outdoor Living",
-  "Travertine Installation",
-  "Pool Deck Transformations",
-  "Exterior Painting",
-  "Deck Construction",
-  "High-End Exterior Remodeling",
-  "Residential Exterior Improvements",
+  { title: "Luxury Outdoor Living", href: "/outdoor-living-boca-raton" },
+  { title: "Travertine Installation", href: "/travertine-boca-raton" },
+  { title: "Pool Deck Transformations", href: "/travertine-boca-raton" },
+  { title: "Exterior Painting", href: "/project-request" },
+  { title: "Deck Construction", href: "/outdoor-living-boca-raton" },
+  { title: "High-End Exterior Remodeling", href: "/project-request" },
+  { title: "Residential Exterior Improvements", href: "/project-request" },
 ];
 
 const projects = [
@@ -37,10 +38,11 @@ const projects = [
   },
 ];
 
-function Button({ children, variant = "primary" }) {
+function Button({ children, href, variant = "primary" }) {
   const primary = variant === "primary";
   return (
-    <button
+    <a
+      href={href}
       className={`group inline-flex items-center gap-3 rounded-full px-7 py-[15px] text-[11px] tracking-[0.20em] uppercase transition-all duration-700 ease-out ${
         primary
           ? "bg-[#C8A96B] text-[#0D1B2A] hover:bg-[#d7ba82]"
@@ -49,7 +51,7 @@ function Button({ children, variant = "primary" }) {
     >
       {children}
       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-    </button>
+    </a>
   );
 }
 
@@ -70,48 +72,7 @@ export default function VelloriWebsite() {
     <main className="min-h-screen bg-[#F3EFE6] text-[#0D1B2A]">
       <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#0D1B2A]/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-[22px] lg:px-10">
-          <div className="flex items-center gap-3 text-white">
-            <svg viewBox="0 0 150 110" className="h-10 w-10 flex-shrink-0" aria-label="VELLORI luxury symbol">
-              <path
-                d="M16 16 L54 16 L82 62 L70 84 Z"
-                fill="none"
-                stroke="#C8A96B"
-                strokeWidth="11"
-                strokeLinecap="square"
-                strokeLinejoin="miter"
-              />
-              <path
-                d="M40 42 L78 102 L124 16"
-                fill="none"
-                stroke="#F3EFE6"
-                strokeWidth="11"
-                strokeLinecap="square"
-                strokeLinejoin="miter"
-              />
-              <path
-                d="M82 58 L112 16 L136 16"
-                fill="none"
-                stroke="#0D1B2A"
-                strokeWidth="11"
-                strokeLinecap="square"
-                strokeLinejoin="miter"
-              />
-            </svg>
-
-            <div className="flex flex-col justify-center leading-none">
-              <div className="font-serif text-[30px] tracking-[0.27em] text-white">
-                VELLORI
-              </div>
-
-              <div className="mt-[7px] flex items-center gap-3">
-                <span className="h-px w-5 bg-[#C8A96B]/50" />
-                <span className="text-[9px] uppercase tracking-[0.28em] text-[#C8A96B]">
-                  BUILD GROUP
-                </span>
-                <span className="h-px w-7 bg-[#C8A96B]/75" />
-              </div>
-            </div>
-          </div>
+          <a href="/" className="text-white"><VelloriLogo /></a>
           <nav className="hidden items-center gap-9 text-[11px] uppercase tracking-[0.16em] text-white/80 lg:flex">
             <a href="#home" className="transition-colors duration-300 hover:text-[#C8A96B]/85">Home</a>
             <a href="/services" className="hover:text-[#C8A96B]">Services</a>
@@ -124,7 +85,7 @@ export default function VelloriWebsite() {
   onClick={() => setMobileMenu(!mobileMenu)}
   className="text-white lg:hidden"
 >
- <Menu tamanho={22} />
+ <Menu size={22} />
 </button>
 
 {/* Mobile Menu */}
@@ -163,8 +124,8 @@ export default function VelloriWebsite() {
             </p>
             <p className="mt-6 text-[12px] uppercase tracking-[0.32em] text-[#C8A96B]/90">Building Excellence. Creating Legacies.</p>
             <div className="mt-16 flex flex-col gap-5 sm:flex-row">
-              <Button>Request Consultation</Button>
-              <Button variant="secondary">Start Your Project</Button>
+              <Button href="/project-request">Request Consultation</Button>
+              <Button href="/project-request" variant="secondary">Start Your Project</Button>
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, delay: 0.15 }} className="mt-12 block lg:mt-0">
@@ -190,11 +151,12 @@ export default function VelloriWebsite() {
             </div>
             <div className="grid gap-4 md:grid-cols-2">
               {services.map((service, index) => (
-                <motion.div key={service} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.04 }} className="group border border-[#0D1B2A]/10 bg-white/55 p-7 transition hover:-translate-y-[2px] hover:border-[#C8A96B]/40 hover:bg-white">
+                <motion.a href={service.href} key={service.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.04 }} className="group block border border-[#0D1B2A]/10 bg-white/55 p-7 transition hover:-translate-y-[2px] hover:border-[#C8A96B]/40 hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#C8A96B]">
                   <div className="mb-10 text-sm text-[#C8A96B]">0{index + 1}</div>
-                  <h3 className="font-serif text-2xl">{service}</h3>
+                  <h3 className="font-serif text-2xl">{service.title}</h3>
                   <p className="mt-4 text-sm leading-7 text-[#0D1B2A]/65">Premium planning, refined finishes, organized execution, and a client experience built around trust and detail.</p>
-                </motion.div>
+                  <span className="mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-[#8A6A32]">View service <ArrowRight className="h-4 w-4" /></span>
+                </motion.a>
               ))}
             </div>
           </div>
@@ -307,7 +269,7 @@ export default function VelloriWebsite() {
               <div className="flex items-center gap-4"><Phone className="h-5 w-5 text-[#C8A96B]" /> Request by consultation form</div>
             </div>
           </div>
-          <form className="bg-[#F3EFE6] p-11 text-[#0D1B2A] md:p-14">
+          <form action="/project-request" method="get" className="bg-[#F3EFE6] p-11 text-[#0D1B2A] md:p-14">
             <div className="grid gap-5 md:grid-cols-2">
               <input className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B]" placeholder="Name" />
               <input className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B]" placeholder="Phone" />
@@ -315,11 +277,11 @@ export default function VelloriWebsite() {
               <input className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B] md:col-span-2" placeholder="Project Location" />
               <select className="border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B] md:col-span-2">
                 <option>Service Needed</option>
-                {services.map((service) => <option key={service}>{service}</option>)}
+                {services.map((service) => <option key={service.title}>{service.title}</option>)}
               </select>
               <textarea className="min-h-36 border border-[#0D1B2A]/10 bg-white px-5 py-4 outline-none focus:border-[#C8A96B] md:col-span-2" placeholder="Tell us about your project" />
             </div>
-            <button type="button" className="mt-7 inline-flex w-full items-center justify-center gap-3 bg-[#0D1B2A] px-7 py-4 text-sm uppercase tracking-[0.22em] text-white transition hover:bg-[#C8A96B] hover:text-[#0D1B2A]">
+            <button type="submit" className="mt-7 inline-flex w-full items-center justify-center gap-3 bg-[#0D1B2A] px-7 py-4 text-sm uppercase tracking-[0.22em] text-white transition hover:bg-[#C8A96B] hover:text-[#0D1B2A]">
               Request Estimate <ArrowRight className="h-4 w-4" />
             </button>
           </form>
@@ -328,10 +290,7 @@ export default function VelloriWebsite() {
 
       <footer className="bg-[#08111c] px-6 py-10 text-white lg:px-10">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-center">
-          <div>
-            <div className="font-serif text-2xl tracking-[0.28em]">VELLORI</div>
-            <div className="mt-1 text-[10px] uppercase tracking-[0.35em] text-[#C8A96B]">Build Group</div>
-          </div>
+          <VelloriLogo compact />
           <p className="text-xs uppercase tracking-[0.25em] text-white/55">Building Excellence. Creating Legacies.</p>
           <p className="text-xs text-white/45">© 2026 VELLORI Build Group. All rights reserved.</p>
         </div>
