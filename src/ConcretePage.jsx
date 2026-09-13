@@ -255,6 +255,23 @@ surrounding South Florida communities.
               </span>
             ))}
           </div>
+
+          <div className="mt-8 flex flex-wrap gap-x-7 gap-y-4">
+            <a
+              href="/service-areas"
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#8A6A32] transition hover:text-[#0D1B2A]"
+            >
+              Explore All South Florida Service Areas
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href="/services"
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#8A6A32] transition hover:text-[#0D1B2A]"
+            >
+              View All Residential Services
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </section>
 
