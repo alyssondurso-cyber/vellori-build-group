@@ -72,7 +72,7 @@ export default function VelloriWebsite() {
     <main className="min-h-screen bg-[#F3EFE6] text-[#0D1B2A]">
       <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#0D1B2A]/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-[22px] lg:px-10">
-          <a href="/" className="text-white"><VelloriLogo /></a>
+          <a href="/" className="text-white" aria-label="VELLORI Build Group home"><VelloriLogo /></a>
           <nav className="hidden items-center gap-9 text-[11px] uppercase tracking-[0.16em] text-white/80 lg:flex">
             <a href="#home" className="transition-colors duration-300 hover:text-[#C8A96B]/85">Home</a>
             <a href="/services" className="hover:text-[#C8A96B]">Services</a>
