@@ -14,7 +14,7 @@ export default function VelloriLogo({ compact = false }) {
         <path d="m46 69 12 22-11 19-12-22 11-19Z" fill="#C8A96B" />
       </svg>
       <span className="flex flex-col justify-center leading-none">
-        <span className={compact ? "font-serif text-2xl tracking-[0.24em] text-white" : "font-serif text-[30px] tracking-[0.27em] text-white"}>
+        <span className={compact ? "font-serif text-2xl tracking-[0.24em] text-[#F3EFE6]" : "font-serif text-[30px] tracking-[0.27em] text-[#F3EFE6]"}>
           VELLORI
         </span>
         <span className="mt-[7px] text-[9px] font-semibold uppercase tracking-[0.24em] text-[#C8A96B]">
