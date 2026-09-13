@@ -76,6 +76,7 @@ export default function VelloriWebsite() {
           <nav className="hidden items-center gap-9 text-[11px] uppercase tracking-[0.16em] text-white/80 lg:flex">
             <a href="#home" className="transition-colors duration-300 hover:text-[#C8A96B]/85">Home</a>
             <a href="/services" className="hover:text-[#C8A96B]">Services</a>
+            <a href="/service-areas" className="hover:text-[#C8A96B]">Service Areas</a>
             <a href="#projects" className="hover:text-[#C8A96B]">Projects</a>
             <a href="#about" className="hover:text-[#C8A96B]">About</a>
             <a href="#contact" className="hover:text-[#C8A96B]">Contact</a>
@@ -97,6 +98,7 @@ export default function VelloriWebsite() {
   <div id="mobile-navigation" className="absolute left-0 top-full w-full bg-[#0D1B2A] border-t border-white/10 flex flex-col items-center gap-6 py-8 text-sm uppercase tracking-[0.18em] text-white lg:hidden">
     <a href="#home" onClick={() => setMobileMenu(false)}>Home</a>
     <a href="/services" onClick={() => setMobileMenu(false)}>Services</a>
+    <a href="/service-areas" onClick={() => setMobileMenu(false)}>Service Areas</a>
     <a href="#projects" onClick={() => setMobileMenu(false)}>Projects</a>
     <a href="#about" onClick={() => setMobileMenu(false)}>About</a>
     <a href="#contact" onClick={() => setMobileMenu(false)}>Contact</a>
@@ -268,7 +270,7 @@ export default function VelloriWebsite() {
             <h2 className="font-serif text-[42px] leading-[1.06] tracking-[-0.01em] md:text-[66px]">Request a premium consultation.</h2>
             <p className="mt-10 max-w-lg text-[18px] leading-[2.05rem] text-white/68">Tell us about your exterior transformation. Our team will review your project details and contact you to discuss the next steps.</p>
             <div className="mt-10 space-y-5 text-sm text-white/70">
-              <div className="flex items-center gap-4"><MapPin className="h-5 w-5 text-[#C8A96B]" /> Serving Boca Raton, Palm Beach, Miami & South Florida</div>
+              <a href="/service-areas" className="flex items-center gap-4 transition hover:text-[#C8A96B]"><MapPin className="h-5 w-5 text-[#C8A96B]" /> Serving Boca Raton, Palm Beach, Miami & South Florida</a>
               <div className="flex items-center gap-4"><Mail className="h-5 w-5 text-[#C8A96B]" /> info@velloribuild.com</div>
               <div className="flex items-center gap-4"><Phone className="h-5 w-5 text-[#C8A96B]" /> Request by consultation form</div>
             </div>
