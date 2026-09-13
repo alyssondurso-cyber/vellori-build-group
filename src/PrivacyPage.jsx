@@ -67,7 +67,7 @@ export default function PrivacyPage() {
     <main className="min-h-screen bg-[#F3EFE6] text-[#0D1B2A]">
       <header className="bg-[#0D1B2A] px-6 py-7 text-white lg:px-10">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
-          <a href="/"><VelloriLogo compact /></a>
+          <a href="/" aria-label="VELLORI Build Group home"><VelloriLogo compact /></a>
           <a href="/project-request" className="rounded-full border border-[#C8A96B]/60 px-5 py-3 text-[11px] uppercase tracking-[0.16em] hover:bg-[#C8A96B] hover:text-[#0D1B2A]">
             Request Consultation
           </a>
