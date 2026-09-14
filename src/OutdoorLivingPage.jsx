@@ -9,6 +9,7 @@ import {
 import VelloriLogo from "./VelloriLogo.jsx";
 
 const outdoorLivingServices = [
+  "Wood & Composite Deck Construction",
   "Outdoor Living Improvements",
   "Patio Improvements",
   "Pool Deck Improvements",
@@ -65,14 +66,14 @@ export default function OutdoorLivingPage() {
           </p>
 
           <h1 className="mt-8 max-w-5xl font-serif text-5xl leading-[1.04] md:text-7xl">
-            Premium Outdoor Living Improvements in Boca Raton
+            Deck Construction & Premium Outdoor Living in Boca Raton
           </h1>
 
           <p className="mt-10 max-w-3xl text-lg leading-8 text-white/70">
-            VELLORI Build Group supports premium residential outdoor living
-            improvement projects throughout Boca Raton and South Florida, with
-            organized execution, refined finishes, attention to detail, and
-            respect for the overall design vision of the property.
+            VELLORI Build Group supports premium deck construction and residential
+            outdoor living improvements throughout Boca Raton and South Florida,
+            including wood and composite decks, patios, pool environments, and
+            refined exterior finishes executed around the property's design vision.
           </p>
 
           <a
@@ -115,6 +116,66 @@ export default function OutdoorLivingPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-[#E9E2D4] px-6 py-24 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-xs uppercase tracking-[0.35em] text-[#8A6A32]">
+            Deck Construction
+          </p>
+
+          <div className="mt-6 grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <h2 className="font-serif text-4xl leading-tight md:text-6xl">
+                Wood and composite decks designed for refined outdoor living.
+              </h2>
+
+              <p className="mt-8 text-lg leading-8 text-[#0D1B2A]/65">
+                A well-executed deck should feel connected to the architecture,
+                circulation, and daily use of the property. VELLORI supports deck
+                construction and improvement scopes in Boca Raton with careful
+                attention to layout, alignment, material transitions, finish
+                quality, and the surrounding outdoor environment.
+              </p>
+
+              <a
+                href="/project-request"
+                className="mt-9 inline-flex items-center gap-3 bg-[#0D1B2A] px-7 py-4 text-xs uppercase tracking-[0.20em] text-white transition hover:bg-[#C8A96B] hover:text-[#0D1B2A]"
+              >
+                Discuss Your Deck Project
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-3">
+              {[
+                [
+                  "Wood Decks",
+                  "Natural material character, clean board alignment, and a finish selected around the property's exterior.",
+                ],
+                [
+                  "Composite Decks",
+                  "Low-maintenance deck surfaces with consistent appearance and material options suited to South Florida outdoor use.",
+                ],
+                [
+                  "Integrated Spaces",
+                  "Deck areas coordinated with patios, pool environments, walkways, seating zones, and exterior finish details.",
+                ],
+              ].map(([title, text]) => (
+                <article key={title} className="border-t border-[#8A6A32] pt-6">
+                  <h3 className="font-serif text-2xl">{title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-[#0D1B2A]/65">{text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <p className="mt-10 max-w-4xl text-sm leading-7 text-[#0D1B2A]/55">
+            Project requirements are reviewed before execution. Any regulated,
+            structural, engineering, or permit-dependent work must remain under
+            the responsibility of the appropriately licensed or authorized party.
+          </p>
         </div>
       </section>
 
