@@ -264,7 +264,7 @@ export default function TravertinePage() {
           Building Excellence. Creating Legacies.
         </p>
       </footer>
-      <MobileLeadBar service="Tile, travertine and natural stone" />
+      <MobileLeadBar service="Travertine, tile & natural stone" />
     </main>
   );
 }
