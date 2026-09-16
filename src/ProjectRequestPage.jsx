@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { track } from "@vercel/analytics";
 import { ArrowRight, CalendarDays, Camera, Mail, Phone } from "lucide-react";
 import VelloriLogo from "./VelloriLogo.jsx";
 
@@ -108,6 +109,11 @@ export default function ProjectRequestPage() {
         event: "generate_lead",
         lead_source: "website_project_request",
         service_interest: fields.service,
+      });
+      track("generate_lead", {
+        source: "website_project_request",
+        service: fields.service,
+        source_page: fields.sourcePage || "direct",
       });
       window.location.assign("/project-request?submitted=1");
     } catch (submissionError) {
