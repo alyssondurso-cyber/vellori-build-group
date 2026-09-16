@@ -325,7 +325,7 @@ demolition, concrete-related scopes, and specialty finishes.
           Building Excellence. Creating Legacies.
         </p>
       </footer>
-      <MobileLeadBar service="Residential construction services" />
+      <MobileLeadBar />
     </main>
   );
 }
