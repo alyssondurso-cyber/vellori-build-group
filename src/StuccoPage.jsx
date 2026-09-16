@@ -7,6 +7,7 @@ import {
   Mail,
 } from "lucide-react";
 import VelloriLogo from "./VelloriLogo.jsx";
+import MobileLeadBar from "./MobileLeadBar.jsx";
 
 const stuccoServices = [
   "Stucco Installation",
@@ -286,6 +287,7 @@ surrounding South Florida communities.
           Building Excellence. Creating Legacies.
         </p>
       </footer>
+      <MobileLeadBar service="Stucco & exterior finishes" />
     </main>
   );
 }

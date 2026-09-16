@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Analytics } from "@vercel/analytics/react";
+import LeadAnalytics from "./LeadAnalytics.jsx";
 import App from "./App.jsx";
 import ServicesPage from "./ServicesPage.jsx";
 import StuccoPage from "./StuccoPage.jsx";
@@ -63,5 +65,7 @@ if (path === "/privacy" || path === "/privacy/") {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Page />
+    <LeadAnalytics />
+    <Analytics />
   </React.StrictMode>
 );

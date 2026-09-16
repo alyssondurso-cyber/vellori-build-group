@@ -7,6 +7,7 @@ import {
   Mail,
 } from "lucide-react";
 import VelloriLogo from "./VelloriLogo.jsx";
+import MobileLeadBar from "./MobileLeadBar.jsx";
 
 const outdoorLivingServices = [
   "Wood & Composite Deck Construction",
@@ -319,6 +320,7 @@ surrounding South Florida communities.
           Building Excellence. Creating Legacies.
         </p>
       </footer>
+      <MobileLeadBar service="Outdoor living or deck" />
     </main>
   );
 }

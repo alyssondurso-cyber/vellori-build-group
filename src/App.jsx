@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin, Phone, Mail, CheckCircle2, Menu, Camera, CalendarDays } from "lucide-react";
 import VelloriLogo from "./VelloriLogo.jsx";
+import MobileLeadBar from "./MobileLeadBar.jsx";
 
 const NAVY = "#0D1B2A";
 const GOLD = "#C8A96B";
@@ -9,7 +10,7 @@ const SAND = "#F3EFE6";
 
 const services = [
   { title: "Luxury Outdoor Living", href: "/outdoor-living-boca-raton" },
-  { title: "Travertine Installation", href: "/travertine-boca-raton" },
+  { title: "Tile, Travertine & Stone Installation", href: "/travertine-boca-raton" },
   { title: "Pool Deck Transformations", href: "/travertine-boca-raton" },
   { title: "Exterior Painting", href: "/project-request" },
   { title: "Deck Construction", href: "/outdoor-living-boca-raton" },
@@ -304,6 +305,7 @@ export default function VelloriWebsite() {
           <p className="text-xs text-white/45">© 2026 VELLORI Build Group. All rights reserved.</p>
         </div>
       </footer>
+      <MobileLeadBar />
     </main>
   );
 }
