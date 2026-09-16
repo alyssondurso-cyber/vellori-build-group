@@ -287,7 +287,7 @@ surrounding South Florida communities.
           Building Excellence. Creating Legacies.
         </p>
       </footer>
-      <MobileLeadBar service="Stucco and exterior finishes" />
+      <MobileLeadBar service="Stucco & exterior finishes" />
     </main>
   );
 }
