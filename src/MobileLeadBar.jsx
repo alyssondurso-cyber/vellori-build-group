@@ -13,6 +13,11 @@ export function trackLeadIntent(action, service = "General") {
 }
 
 export default function MobileLeadBar({ service = "General" }) {
+  const params = new URLSearchParams();
+  if (service && service !== "General") params.set("service", service);
+  if (typeof window !== "undefined") params.set("from", window.location.pathname);
+  const estimateHref = `/project-request?${params.toString()}`;
+
   return (
     <>
       <div className="h-20 md:hidden" aria-hidden="true" />
@@ -30,7 +35,7 @@ export default function MobileLeadBar({ service = "General" }) {
             Call
           </a>
           <a
-            href="/project-request"
+            href={estimateHref}
             onClick={() => trackLeadIntent("estimate_request", service)}
             className="inline-flex min-h-12 items-center justify-center bg-[#C8A96B] px-4 text-center text-xs font-semibold uppercase tracking-[0.12em] text-[#0D1B2A]"
           >
