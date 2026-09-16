@@ -4,6 +4,16 @@ import VelloriLogo from "./VelloriLogo.jsx";
 
 const inputClass = "mt-2 w-full border border-[#0D1B2A]/15 bg-[#F8F5EE] px-4 py-3 text-sm outline-none transition focus:border-[#C8A96B] focus:ring-1 focus:ring-[#C8A96B]";
 const labelClass = "text-xs font-medium uppercase tracking-[0.13em] text-[#0D1B2A]/70";
+const serviceOptions = [
+  "Stucco & exterior finishes",
+  "EIFS",
+  "Travertine, tile & natural stone",
+  "Pool deck",
+  "Outdoor living or deck",
+  "Concrete-related scope",
+  "Selective demolition or surface preparation",
+  "Drywall or finish support",
+];
 
 async function preparePhoto(file) {
   if (!file.type.startsWith("image/")) throw new Error("Please upload image files only.");
@@ -28,7 +38,13 @@ export default function ProjectRequestPage() {
   const [visitDate, setVisitDate] = useState("");
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
-  const submitted = new URLSearchParams(window.location.search).get("submitted") === "1";
+  const query = new URLSearchParams(window.location.search);
+  const submitted = query.get("submitted") === "1";
+  const requestedService = serviceOptions.includes(query.get("service"))
+    ? query.get("service")
+    : "";
+  const sourcePage = query.get("from") || "direct";
+  const referrer = document.referrer || "direct";
 
   useEffect(() => {
     document.title = "Request a Project Estimate | VELLORI Build Group";
@@ -127,6 +143,11 @@ export default function ProjectRequestPage() {
           ) : (
           <form onSubmit={handleSubmit} className="border border-[#0D1B2A]/10 bg-white p-6 shadow-[0_18px_60px_rgba(13,27,42,0.08)] sm:p-9 md:p-12">
             <input type="text" name="website" tabIndex="-1" autoComplete="off" className="hidden" aria-hidden="true"/>
+            <input type="hidden" name="sourcePage" value={sourcePage}/>
+            <input type="hidden" name="referrer" value={referrer}/>
+            <input type="hidden" name="utmSource" value={query.get("utm_source") || ""}/>
+            <input type="hidden" name="utmMedium" value={query.get("utm_medium") || ""}/>
+            <input type="hidden" name="utmCampaign" value={query.get("utm_campaign") || ""}/>
 
             <div className="border-b border-[#0D1B2A]/10 pb-8">
               <p className="text-xs uppercase tracking-[0.30em] text-[#C8A96B]">01 · Contact &amp; Property</p>
@@ -145,7 +166,7 @@ export default function ProjectRequestPage() {
             <div className="border-b border-[#0D1B2A]/10 py-8">
               <p className="text-xs uppercase tracking-[0.30em] text-[#C8A96B]">02 · Project Details</p>
               <fieldset className="mt-7"><legend className={labelClass}>How would you like us to help? *</legend><div className="mt-3 grid gap-3 sm:grid-cols-3">{["Send photos for a preliminary estimate","Request an on-site visit","Request a callback"].map(value=><label key={value} className="flex items-start gap-3 border border-[#0D1B2A]/10 p-4 text-sm leading-6"><input type="radio" name="requestType" value={value} required className="mt-1 accent-[#C8A96B]"/>{value}</label>)}</div></fieldset>
-              <label className={`${labelClass} mt-7 block`}>Primary service needed *<select className={inputClass} name="service" required defaultValue=""><option value="" disabled>Select a service</option>{["Stucco & exterior finishes","EIFS","Travertine, tile & natural stone","Pool deck","Outdoor living or deck","Concrete-related scope","Selective demolition or surface preparation","Drywall or finish support"].map(value=><option key={value} value={value}>{value}</option>)}</select></label>
+              <label className={`${labelClass} mt-7 block`}>Primary service needed *<select className={inputClass} name="service" required defaultValue={requestedService}><option value="" disabled>Select a service</option>{serviceOptions.map(value=><option key={value} value={value}>{value}</option>)}</select></label>
               <label className={`${labelClass} mt-7 block`}>Project description *<textarea className={`${inputClass} min-h-36 resize-y`} name="description" required/></label>
               <div className="mt-7 grid gap-5 sm:grid-cols-2">
                 <label className={labelClass}>Estimated timeline *<select className={inputClass} name="timeline" required defaultValue=""><option value="" disabled>Select timeline</option>{["ASAP","1–4 weeks","1–3 months","3+ months","Planning only"].map(value=><option key={value} value={value}>{value}</option>)}</select></label>
