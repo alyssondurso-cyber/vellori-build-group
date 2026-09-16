@@ -326,7 +326,7 @@ surrounding South Florida communities.
           Building Excellence. Creating Legacies.
         </p>
       </footer>
-      <MobileLeadBar service="Concrete and surface preparation" />
+      <MobileLeadBar service="Concrete-related scope" />
     </main>
   );
 }
