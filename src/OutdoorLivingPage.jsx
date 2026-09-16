@@ -320,7 +320,7 @@ surrounding South Florida communities.
           Building Excellence. Creating Legacies.
         </p>
       </footer>
-      <MobileLeadBar service="Outdoor living and decks" />
+      <MobileLeadBar service="Outdoor living or deck" />
     </main>
   );
 }
