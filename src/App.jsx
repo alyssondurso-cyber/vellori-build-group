@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin, Phone, Mail, CheckCircle2, Menu, Camera, CalendarDays } from "lucide-react";
 import VelloriLogo from "./VelloriLogo.jsx";
+import MobileLeadBar from "./MobileLeadBar.jsx";
 
 const NAVY = "#0D1B2A";
 const GOLD = "#C8A96B";
@@ -304,6 +305,7 @@ export default function VelloriWebsite() {
           <p className="text-xs text-white/45">© 2026 VELLORI Build Group. All rights reserved.</p>
         </div>
       </footer>
+      <MobileLeadBar service="Residential exterior improvements" />
     </main>
   );
 }
