@@ -35,7 +35,6 @@ export default function MobileLeadBar({ service = "General" }) {
         <div className="mx-auto grid max-w-lg grid-cols-[0.8fr_1.2fr] gap-3">
           <a
             href="tel:+15618874653"
-            onClick={() => trackLeadIntent("phone_call", service)}
             className="inline-flex min-h-12 items-center justify-center gap-2 border border-[#C8A96B]/70 px-4 text-xs font-medium uppercase tracking-[0.12em] text-white"
           >
             <Phone className="h-4 w-4 text-[#C8A96B]" />
@@ -43,7 +42,6 @@ export default function MobileLeadBar({ service = "General" }) {
           </a>
           <a
             href={estimateHref}
-            onClick={() => trackLeadIntent("estimate_request", service)}
             className="inline-flex min-h-12 items-center justify-center bg-[#C8A96B] px-4 text-center text-xs font-semibold uppercase tracking-[0.12em] text-[#0D1B2A]"
           >
             Request an Estimate
