@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { track } from "@vercel/analytics";
 import { ArrowRight, CalendarDays, Camera, Mail, Phone } from "lucide-react";
+import { inferServiceFromPath } from "./LeadAnalytics.jsx";
 import VelloriLogo from "./VelloriLogo.jsx";
 
 const inputClass = "mt-2 w-full border border-[#0D1B2A]/15 bg-[#F8F5EE] px-4 py-3 text-sm outline-none transition focus:border-[#C8A96B] focus:ring-1 focus:ring-[#C8A96B]";
@@ -41,11 +42,21 @@ export default function ProjectRequestPage() {
   const [error, setError] = useState("");
   const query = new URLSearchParams(window.location.search);
   const submitted = query.get("submitted") === "1";
+  const referrer = document.referrer || "direct";
+  const referrerPath = (() => {
+    try {
+      return new URL(referrer).pathname;
+    } catch {
+      return "";
+    }
+  })();
+  const sourcePage = query.get("from") || referrerPath || "direct";
+  const inferredService = inferServiceFromPath(sourcePage);
   const requestedService = serviceOptions.includes(query.get("service"))
     ? query.get("service")
-    : "";
-  const sourcePage = query.get("from") || "direct";
-  const referrer = document.referrer || "direct";
+    : serviceOptions.includes(inferredService)
+      ? inferredService
+      : "";
 
   useEffect(() => {
     document.title = "Request a Project Estimate | VELLORI Build Group";
