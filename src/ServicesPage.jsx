@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { ArrowRight, CheckCircle2, MapPin, Mail, Phone } from "lucide-react";
 import VelloriLogo from "./VelloriLogo.jsx";
+import MobileLeadBar from "./MobileLeadBar.jsx";
 
 const serviceGroups = [
   {
@@ -324,6 +325,7 @@ demolition, concrete-related scopes, and specialty finishes.
           Building Excellence. Creating Legacies.
         </p>
       </footer>
+      <MobileLeadBar service="Residential construction services" />
     </main>
   );
 }
