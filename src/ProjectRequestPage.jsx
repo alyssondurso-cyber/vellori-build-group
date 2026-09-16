@@ -87,6 +87,12 @@ export default function ProjectRequestPage() {
       });
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.error || "We could not send your request. Please try again.");
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "generate_lead",
+        lead_source: "website_project_request",
+        service_interest: fields.service,
+      });
       window.location.assign("/project-request?submitted=1");
     } catch (submissionError) {
       setError(submissionError.message || "We could not send your request. Please call or email VELLORI.");
