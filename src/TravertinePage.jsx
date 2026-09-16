@@ -7,6 +7,7 @@ import {
   Mail,
 } from "lucide-react";
 import VelloriLogo from "./VelloriLogo.jsx";
+import MobileLeadBar from "./MobileLeadBar.jsx";
 
 const surfaceServices = [
   "Interior & Exterior Tile Installation",
@@ -263,6 +264,7 @@ export default function TravertinePage() {
           Building Excellence. Creating Legacies.
         </p>
       </footer>
+      <MobileLeadBar service="Tile, travertine and natural stone" />
     </main>
   );
 }
