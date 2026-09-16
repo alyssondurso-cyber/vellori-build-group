@@ -8,18 +8,19 @@ import {
 } from "lucide-react";
 import VelloriLogo from "./VelloriLogo.jsx";
 
-const travertineServices = [
+const surfaceServices = [
+  "Interior & Exterior Tile Installation",
   "Travertine Installation",
+  "Porcelain Tile Installation",
+  "Natural Stone Installation",
   "Travertine Pool Decks",
   "Travertine Patios",
   "Travertine Walkways",
-  "Travertine Outdoor Living Areas",
-  "Travertine Surface Preparation",
-  "Travertine Repairs",
-  "Travertine Replacement",
-  "Travertine Leveling",
-  "Travertine Edge & Border Work",
-  "Travertine Grout & Joint Improvements",
+  "Floor & Surface Preparation",
+  "Leveling & Layout Preparation",
+  "Travertine Repair & Replacement",
+  "Edge, Border & Transition Work",
+  "Grout & Joint Improvements",
   "Exterior Stone Surface Improvements",
 ];
 
@@ -62,18 +63,19 @@ export default function TravertinePage() {
       <section className="bg-[#0D1B2A] px-6 py-28 text-white lg:px-10">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">
-            Boca Raton Travertine & Outdoor Surfaces
+            Boca Raton Tile, Travertine & Natural Stone
           </p>
 
           <h1 className="mt-8 max-w-5xl font-serif text-5xl leading-[1.04] md:text-7xl">
-            Travertine Installation & Premium Outdoor Surfaces in Boca Raton
+            Tile, Travertine & Stone Installation in Boca Raton
           </h1>
 
           <p className="mt-10 max-w-3xl text-lg leading-8 text-white/70">
-            VELLORI Build Group supports residential travertine and outdoor
-            surface improvement projects throughout Boca Raton and South
-            Florida, with attention to preparation, alignment, transitions,
-            clean workmanship, and refined finish execution.
+            VELLORI Build Group provides residential tile, travertine, and
+            natural stone installation for interior floors, patios, pool
+            decks, walkways, and outdoor living areas throughout Boca Raton
+            and South Florida, with attention to preparation, alignment,
+            transitions, and refined finish execution.
           </p>
 
           <a
@@ -90,24 +92,24 @@ export default function TravertinePage() {
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">
-              Travertine Services
+              Tile, Travertine & Stone Services
             </p>
 
             <h2 className="mt-6 font-serif text-4xl leading-tight md:text-6xl">
-              Travertine work built around preparation, precision, and detail.
+              Surface installation built around preparation, precision, and detail.
             </h2>
 
             <p className="mt-8 text-lg leading-8 text-[#0D1B2A]/65">
-              Travertine performance and appearance depend on proper surface
-              preparation, layout, leveling, transitions, joint consistency,
-              and finish execution. VELLORI approaches each residential scope
-              with organized execution and close attention to the finished
-              surface.
+              Tile, travertine, and natural stone perform best when the
+              substrate, layout, leveling, transitions, joints, and finish are
+              handled as one coordinated scope. VELLORI approaches each
+              residential installation with organized execution and close
+              attention to the finished surface.
             </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            {travertineServices.map((service) => (
+            {surfaceServices.map((service) => (
               <div
                 key={service}
                 className="flex items-start gap-4 border border-[#0D1B2A]/10 bg-white p-6"
@@ -123,12 +125,12 @@ export default function TravertinePage() {
       <section className="bg-white px-6 py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">
-            Premium Travertine
+            Refined Surface Installation
           </p>
 
           <h2 className="mt-5 max-w-4xl font-serif text-4xl md:text-6xl">
-            Travertine installation built around preparation, precision, and
-            finish quality.
+            Tile, travertine, and stone installation built around preparation,
+            precision, and finish quality.
           </h2>
 
           <div className="mt-12 grid gap-8 md:grid-cols-3">
@@ -136,10 +138,10 @@ export default function TravertinePage() {
               <h3 className="font-serif text-2xl">Preparation</h3>
 
               <p className="mt-4 text-sm leading-7 text-[#0D1B2A]/65">
-                Existing conditions are reviewed so the surface can be properly
-                prepared for the travertine scope, including cleaning,
-                leveling, layout planning, and other preparation required by
-                the project.
+                Existing conditions are reviewed so the substrate can be
+                properly prepared for the selected tile, travertine, or stone,
+                including cleaning, leveling, layout planning, and other
+                preparation required by the project.
               </p>
             </article>
 
@@ -147,9 +149,9 @@ export default function TravertinePage() {
               <h3 className="font-serif text-2xl">Installation</h3>
 
               <p className="mt-4 text-sm leading-7 text-[#0D1B2A]/65">
-                Travertine is installed with attention to alignment, pattern,
-                spacing, transitions, edges, drainage considerations, and the
-                overall continuity of the finished surface.
+                Materials are installed with attention to alignment, pattern,
+                spacing, transitions, edges, drainage considerations where
+                applicable, and the continuity of the finished surface.
               </p>
             </article>
 
@@ -173,13 +175,13 @@ export default function TravertinePage() {
           </p>
 
           <h2 className="mt-5 font-serif text-4xl md:text-6xl">
-            Travertine services across Boca Raton, Palm Beach County & South Florida.
+            Tile, travertine, and stone services across Boca Raton and South Florida.
           </h2>
 
           <p className="mt-7 max-w-3xl leading-8 text-[#0D1B2A]/65">
-            VELLORI supports residential travertine and exterior improvement projects
-across Boca Raton, Palm Beach County, Broward County, Miami-Dade, and
-surrounding South Florida communities.
+            VELLORI supports residential tile, travertine, natural stone, and
+            exterior surface projects across Boca Raton, Palm Beach County,
+            Broward County, Miami-Dade, and surrounding South Florida communities.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
@@ -220,12 +222,12 @@ surrounding South Florida communities.
             </p>
 
             <h2 className="mt-6 font-serif text-4xl md:text-6xl">
-              Planning travertine or outdoor surface improvements?
+              Planning a tile, travertine, or natural stone project?
             </h2>
 
             <p className="mt-7 max-w-xl leading-8 text-white/65">
-              Tell us about the property, existing surface, project location,
-              and the outdoor improvements you are considering.
+              Tell us about the property, existing surface, material you are
+              considering, project location, and the finished result you want.
             </p>
           </div>
 
