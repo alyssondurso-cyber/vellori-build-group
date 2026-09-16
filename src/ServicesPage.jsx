@@ -23,12 +23,13 @@ const serviceGroups = [
 ],
   },
   {
-    title: "Travertine, Tile & Stone",
+    title: "Tile, Travertine & Natural Stone",
     href: "/travertine-boca-raton",
     description:
-      "Premium installation and surface improvement for outdoor living areas, patios, pool decks, walkways, and residential exterior environments.",
+      "Premium tile, travertine, and natural stone installation for residential floors, outdoor living areas, patios, pool decks, walkways, and exterior environments.",
     items: [
       "Travertine Installation",
+      "Interior Tile Installation",
       "Travertine Pool Decks",
       "Exterior Tile Installation",
       "Porcelain Tile",
