@@ -1,4 +1,5 @@
 import React from "react";
+import { track } from "@vercel/analytics";
 import { Phone } from "lucide-react";
 
 export function trackLeadIntent(action, service = "General") {
@@ -9,6 +10,12 @@ export function trackLeadIntent(action, service = "General") {
     event: "lead_intent",
     lead_action: action,
     service_interest: service,
+  });
+
+  track("lead_intent", {
+    action,
+    service,
+    page: window.location.pathname,
   });
 }
 
