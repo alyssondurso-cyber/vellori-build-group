@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { ArrowRight, MapPin, Phone, Mail, CheckCircle2 } from "lucide-react";
 import VelloriLogo from "./VelloriLogo.jsx";
+import MobileLeadBar from "./MobileLeadBar.jsx";
 
 const regions = [
   {
@@ -160,6 +161,7 @@ export default function ServiceAreasPage() {
         <p className="text-xs uppercase tracking-[0.25em] text-white/55">Building Excellence. Creating Legacies.</p>
         <a href="/privacy" className="mt-4 inline-block text-xs text-white/45 underline underline-offset-4 hover:text-[#C8A96B]">Privacy Policy</a>
       </footer>
+      <MobileLeadBar service="South Florida residential project" />
     </main>
   );
 }
