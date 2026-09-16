@@ -19,6 +19,8 @@ export default async function handler(request, response) {
     ["Property", fields.propertyType], ["Request", fields.requestType], ["Service", fields.service],
     ["Timeline", fields.timeline], ["Budget", fields.budget || "Not sure yet"], ["Visit date", fields.visitDate],
     ["Preferred day", fields.preferredDay], ["Preferred time", fields.preferredTime], ["Description", fields.description],
+    ["Source page", fields.sourcePage], ["Referrer", fields.referrer], ["UTM source", fields.utmSource],
+    ["UTM medium", fields.utmMedium], ["UTM campaign", fields.utmCampaign],
   ].filter(([, value]) => value);
   const details = rows.map(([label, value]) => `<tr><td style="padding:8px 14px;color:#75613b;font-weight:700;vertical-align:top">${escapeHtml(label)}</td><td style="padding:8px 14px;color:#0D1B2A">${escapeHtml(value)}</td></tr>`).join("");
   const sendEmail = (payload) => fetch("https://api.resend.com/emails", {
