@@ -305,7 +305,7 @@ export default function VelloriWebsite() {
           <p className="text-xs text-white/45">© 2026 VELLORI Build Group. All rights reserved.</p>
         </div>
       </footer>
-      <MobileLeadBar service="Residential exterior improvements" />
+      <MobileLeadBar />
     </main>
   );
 }
