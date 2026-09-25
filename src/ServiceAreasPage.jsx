@@ -22,11 +22,26 @@ const regions = [
 ]
 
 const services = [
-  "Stucco repair, EIFS support, and refined exterior finishes",
-  "Travertine, tile, stone, and pool-deck improvements",
-  "Outdoor living and residential exterior transformations",
-  "Defined concrete surface preparation and finish-support scopes",
-  "Surface preparation and specialty finish support",
+  {
+    label: "Stucco repair, EIFS support, and refined exterior finishes",
+    href: "/stucco-boca-raton",
+  },
+  {
+    label: "Travertine, tile, stone, and pool-deck improvements",
+    href: "/travertine-boca-raton",
+  },
+  {
+    label: "Outdoor living and residential exterior transformations",
+    href: "/outdoor-living-boca-raton",
+  },
+  {
+    label: "Defined concrete surface preparation and finish-support scopes",
+    href: "/concrete-boca-raton",
+  },
+  {
+    label: "Surface preparation and specialty finish support",
+    href: "/services",
+  },
 ];
 
 export default function ServiceAreasPage() {
@@ -129,9 +144,14 @@ export default function ServiceAreasPage() {
           </div>
           <div className="space-y-4">
             {services.map((service) => (
-              <div key={service} className="flex items-start gap-4 border-b border-[#0D1B2A]/10 pb-4">
+              <div key={service.label} className="flex items-start gap-4 border-b border-[#0D1B2A]/10 pb-4">
                 <CheckCircle2 className="mt-1 h-5 w-5 flex-none text-[#C8A96B]" />
-                <span>{service}</span>
+                <a
+                  href={service.href}
+                  className="underline decoration-[#C8A96B]/45 underline-offset-4 transition hover:text-[#8A6A32]"
+                >
+                  {service.label}
+                </a>
               </div>
             ))}
             <p className="pt-3 text-sm leading-7 text-[#0D1B2A]/60">
