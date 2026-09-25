@@ -113,7 +113,16 @@ export default function OutdoorLivingPage() {
                 className="flex items-start gap-4 border border-[#0D1B2A]/10 bg-white p-6"
               >
                 <CheckCircle2 className="mt-1 h-5 w-5 flex-none text-[#C8A96B]" />
-                <span className="text-sm leading-6">{service}</span>
+                {service === "Travertine & Tile Surfaces" ? (
+                  <a
+                    href="/travertine-boca-raton"
+                    className="text-sm leading-6 underline decoration-[#C8A96B]/45 underline-offset-4 transition hover:text-[#8A6A32]"
+                  >
+                    Travertine Paver & Tile Installation
+                  </a>
+                ) : (
+                  <span className="text-sm leading-6">{service}</span>
+                )}
               </div>
             ))}
           </div>
