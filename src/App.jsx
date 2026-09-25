@@ -114,9 +114,11 @@ export default function VelloriWebsite() {
       <section id="home" className="relative min-h-screen overflow-hidden bg-[#0D1B2A] pt-[136px] text-white">
         <div className="absolute inset-0 opacity-55">
           <img
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2400&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=70&w=1600&auto=format&fit=crop"
             alt="Luxury South Florida outdoor living residence"
             className="h-full w-full object-cover"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B2A] via-[#0D1B2A]/76 to-[#0D1B2A]/24" />
         </div>
@@ -233,7 +235,13 @@ export default function VelloriWebsite() {
       <section id="about" className="px-6 py-36 lg:px-10">
         <div className="mx-auto grid max-w-7xl gap-20 lg:grid-cols-[1fr_1fr] lg:items-center">
           <div className="relative">
-            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=70&w=900&auto=format&fit=crop" alt="Luxury exterior residence detail" className="h-[620px] w-full object-cover" />
+            <img
+              src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=70&w=1200&auto=format&fit=crop"
+              alt="Luxury exterior residence detail"
+              className="h-[620px] w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
             <div className="absolute bottom-8 right-8 bg-[#F3EFE6] p-8 shadow-2xl">
               <p className="text-xs uppercase tracking-[0.3em] text-[#C8A96B]">VELLORI Standard</p>
               <p className="mt-3 font-serif text-3xl">Refined. Organized. Built to last.</p>
