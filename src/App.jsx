@@ -115,6 +115,8 @@ export default function VelloriWebsite() {
         <div className="absolute inset-0 opacity-55">
           <img
             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=70&w=1600&auto=format&fit=crop"
+            srcSet="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=70&w=640&auto=format&fit=crop 640w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=70&w=960&auto=format&fit=crop 960w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=70&w=1280&auto=format&fit=crop 1280w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=70&w=1600&auto=format&fit=crop 1600w"
+            sizes="100vw"
             alt="Luxury South Florida outdoor living residence"
             className="h-full w-full object-cover"
             fetchPriority="high"
@@ -216,6 +218,8 @@ export default function VelloriWebsite() {
                 <div className="h-[340px] overflow-hidden">
                   <img
                     src={project.image}
+                    srcSet={`${project.image.replace("w=900", "w=480")} 480w, ${project.image.replace("w=900", "w=720")} 720w, ${project.image} 900w`}
+                    sizes="(min-width: 1024px) 33vw, 100vw"
                     alt={project.title}
                     className="h-full w-full object-cover transition duration-[1800ms] ease-out group-hover:scale-[1.025]"
                     loading="lazy"
@@ -237,6 +241,8 @@ export default function VelloriWebsite() {
           <div className="relative">
             <img
               src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=70&w=1200&auto=format&fit=crop"
+              srcSet="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=70&w=480&auto=format&fit=crop 480w, https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=70&w=768&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=70&w=1200&auto=format&fit=crop 1200w"
+              sizes="(min-width: 1024px) 50vw, 100vw"
               alt="Luxury exterior residence detail"
               className="h-[620px] w-full object-cover"
               loading="lazy"
