@@ -56,10 +56,10 @@ function Button({ children, href, variant = "primary" }) {
   );
 }
 
-function SectionLabel({ children }) {
+function SectionLabel({ children, onDark = false }) {
   return (
-    <div className="mb-5 flex items-center gap-4 text-xs font-medium uppercase tracking-[0.35em] text-[#C8A96B]">
-      <span className="h-px w-12 bg-[#C8A96B]/70" />
+    <div className={`mb-5 flex items-center gap-4 text-xs font-medium uppercase tracking-[0.35em] ${onDark ? "text-[#C8A96B]" : "text-[#74551F]"}`}>
+      <span className={`h-px w-12 ${onDark ? "bg-[#C8A96B]/70" : "bg-[#74551F]/70"}`} />
       {children}
     </div>
   );
@@ -124,7 +124,7 @@ export default function VelloriWebsite() {
         </div>
         <div className="relative mx-auto grid min-h-[calc(100vh-8.5rem)] max-w-7xl items-center px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-10">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-[880px]">
-            <SectionLabel>South Florida Luxury Exteriors</SectionLabel>
+            <SectionLabel onDark>South Florida Luxury Exteriors</SectionLabel>
             <h1 className="font-serif text-5xl leading-[1.03] tracking-[-0.018em] md:text-7xl lg:text-[90px]">
               Luxury Outdoor Living & Exterior Transformations in South Florida
             </h1>
@@ -161,7 +161,7 @@ export default function VelloriWebsite() {
             <div className="grid gap-4 md:grid-cols-2">
               {services.map((service, index) => (
                 <motion.a href={service.href} key={service.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.04 }} className="group block border border-[#0D1B2A]/10 bg-white/55 p-7 transition hover:-translate-y-[2px] hover:border-[#C8A96B]/40 hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#C8A96B]">
-                  <div className="mb-10 text-sm text-[#C8A96B]">0{index + 1}</div>
+                  <div className="mb-10 text-sm text-[#74551F]">0{index + 1}</div>
                   <h3 className="font-serif text-2xl">{service.title}</h3>
                   <p className="mt-4 text-sm leading-7 text-[#0D1B2A]/65">Premium planning, refined finishes, organized execution, and a client experience built around trust and detail.</p>
                   <span className="mt-7 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-[#8A6A32]">View service <ArrowRight className="h-4 w-4" /></span>
@@ -205,7 +205,7 @@ export default function VelloriWebsite() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 flex flex-col justify-between gap-10 md:flex-row md:items-end">
             <div>
-              <SectionLabel>Project Vision</SectionLabel>
+              <SectionLabel onDark>Project Vision</SectionLabel>
               <h2 className="font-serif text-4xl md:text-6xl">Exterior possibilities shaped around your property.</h2>
             </div>
             <p className="max-w-md text-sm leading-7 text-white/65">Representative imagery illustrating the types of refined exterior environments VELLORI can help execute. Completed VELLORI projects will be added as photography becomes available.</p>
@@ -243,7 +243,7 @@ export default function VelloriWebsite() {
               decoding="async"
             />
             <div className="absolute bottom-8 right-8 bg-[#F3EFE6] p-8 shadow-2xl">
-              <p className="text-xs uppercase tracking-[0.3em] text-[#C8A96B]">VELLORI Standard</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-[#74551F]">VELLORI Standard</p>
               <p className="mt-3 font-serif text-3xl">Refined. Organized. Built to last.</p>
             </div>
           </div>
@@ -269,7 +269,7 @@ export default function VelloriWebsite() {
               ["03", "Lead Ready", "Built for consultations, estimates, Google Business, SEO, and future paid traffic."],
             ].map(([num, title, text]) => (
               <div key={title} className="bg-white p-10">
-                <div className="font-serif text-5xl text-[#C8A96B]">{num}</div>
+                <div className="font-serif text-5xl text-[#74551F]">{num}</div>
                 <h3 className="mt-8 font-serif text-3xl">{title}</h3>
                 <p className="mt-4 text-sm leading-7 text-[#0D1B2A]/65">{text}</p>
               </div>
@@ -281,7 +281,7 @@ export default function VelloriWebsite() {
       <section id="contact" className="bg-[#0D1B2A] px-6 py-36 text-white lg:px-10">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <SectionLabel>Start Your Project</SectionLabel>
+            <SectionLabel onDark>Start Your Project</SectionLabel>
             <h2 className="font-serif text-[42px] leading-[1.06] tracking-[-0.01em] md:text-[66px]">Request a premium consultation.</h2>
             <p className="mt-10 max-w-lg text-[18px] leading-[2.05rem] text-white/68">Tell us about your exterior transformation. Our team will review your project details and contact you to discuss the next steps.</p>
             <div className="mt-10 space-y-5 text-sm text-white/70">
@@ -291,7 +291,7 @@ export default function VelloriWebsite() {
             </div>
           </div>
           <div className="bg-[#F3EFE6] p-11 text-[#0D1B2A] md:p-14">
-            <p className="text-xs uppercase tracking-[0.28em] text-[#8A6A32]">Choose the easiest next step</p>
+            <p className="text-xs uppercase tracking-[0.28em] text-[#684B19]">Choose the easiest next step</p>
             <div className="mt-7 grid gap-4">
               {[
                 [Camera, "Send project photos", "Share the existing condition for an initial review."],
