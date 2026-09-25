@@ -23,19 +23,19 @@ const projects = [
     title: "Refined Outdoor Living",
     tag: "Project Inspiration • Travertine • Exterior Living",
     image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=70&w=900&auto=format&fit=crop",
   },
   {
     title: "Architectural Exterior Finishes",
     tag: "Project Inspiration • Facade • Refined Finish",
     image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=70&w=900&auto=format&fit=crop",
   },
   {
     title: "Modern Pool Environments",
     tag: "Project Inspiration • Pool Deck • Stone",
     image:
-      "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=70&w=900&auto=format&fit=crop",
   },
 ];
 
@@ -212,7 +212,13 @@ export default function VelloriWebsite() {
             {projects.map((project) => (
               <div key={project.title} className="group overflow-hidden bg-white/5">
                 <div className="h-[340px] overflow-hidden">
-                  <img src={project.image} alt={project.title} className="h-full w-full object-cover transition duration-[1800ms] ease-out group-hover:scale-[1.025]" />
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-full w-full object-cover transition duration-[1800ms] ease-out group-hover:scale-[1.025]"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div className="border border-white/10 border-t-0 p-7">
                   <p className="text-xs uppercase tracking-[0.25em] text-[#C8A96B]">{project.tag}</p>
@@ -227,7 +233,7 @@ export default function VelloriWebsite() {
       <section id="about" className="px-6 py-36 lg:px-10">
         <div className="mx-auto grid max-w-7xl gap-20 lg:grid-cols-[1fr_1fr] lg:items-center">
           <div className="relative">
-            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1600&auto=format&fit=crop" alt="Luxury exterior residence detail" className="h-[620px] w-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=70&w=900&auto=format&fit=crop" alt="Luxury exterior residence detail" className="h-[620px] w-full object-cover" />
             <div className="absolute bottom-8 right-8 bg-[#F3EFE6] p-8 shadow-2xl">
               <p className="text-xs uppercase tracking-[0.3em] text-[#C8A96B]">VELLORI Standard</p>
               <p className="mt-3 font-serif text-3xl">Refined. Organized. Built to last.</p>
