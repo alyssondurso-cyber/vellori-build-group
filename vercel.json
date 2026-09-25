@@ -65,5 +65,12 @@
       "source": "/privacy/",
       "destination": "/privacy.html"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/projehttps\\://velloribuild.com/project-requestct-request",
+      "destination": "/project-request",
+      "permanent": true
+    }
   ]
 }
