@@ -68,7 +68,7 @@
   ],
   "redirects": [
     {
-      "source": "/projehttps\\://velloribuild.com/project-requestct-request",
+      "source": "/projehttps\\:/velloribuild.com/project-requestct-request",
       "destination": "/project-request",
       "permanent": true
     }
