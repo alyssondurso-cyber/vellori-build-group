@@ -1,5 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/projehttps\\:/velloribuild.com/project-requestct-request",
+      "destination": "/project-request",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/services",
@@ -64,13 +71,6 @@
     {
       "source": "/privacy/",
       "destination": "/privacy.html"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/projehttps\\:/velloribuild.com/project-requestct-request",
-      "destination": "/project-request",
-      "permanent": true
     }
   ]
 }
