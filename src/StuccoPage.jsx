@@ -192,6 +192,89 @@ export default function StuccoPage() {
     </div>
   </div>
 </section>
+      <section aria-labelledby="stucco-project" className="bg-[#E9E2D5] px-6 py-24 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-xs uppercase tracking-[0.35em] text-[#8A6A32]">
+            Documented Residential Project · Boca Raton, FL
+          </p>
+          <h2 id="stucco-project" className="mt-6 max-w-5xl font-serif text-4xl leading-tight md:text-6xl">
+            A real stucco restoration, shown before painting.
+          </h2>
+          <p className="mt-7 max-w-3xl text-lg leading-8 text-[#0D1B2A]/75">
+            These photographs document VELLORI's work on a residential exterior in
+            Boca Raton: surface preparation, stucco repair, and application of a
+            new exterior finish. They show the actual property before and during
+            the stucco work. Exterior painting was a separate stage and was not
+            included in VELLORI's scope for this project.
+          </p>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <figure className="bg-white">
+              <img
+                src="/projects/boca-raton-stucco-garage-in-progress.jpeg"
+                alt="Actual Boca Raton garage façade during stucco restoration, with unfinished surfaces above the garage door"
+                width="1152"
+                height="1536"
+                loading="lazy"
+                className="aspect-[4/5] w-full object-cover"
+              />
+              <figcaption className="px-5 py-5 text-sm leading-6 text-[#0D1B2A]/70">
+                Garage façade during the stucco restoration, before painting.
+              </figcaption>
+            </figure>
+            <figure className="bg-white">
+              <img
+                src="/projects/boca-raton-stucco-protected-window.jpeg"
+                alt="Actual stucco work beside a window protected with plastic masking at a Boca Raton home"
+                width="1152"
+                height="1536"
+                loading="lazy"
+                className="aspect-[4/5] w-full object-cover"
+              />
+              <figcaption className="px-5 py-5 text-sm leading-6 text-[#0D1B2A]/70">
+                Protected window and adjacent wall while exterior stucco work was underway.
+              </figcaption>
+            </figure>
+            <figure className="bg-white">
+              <img
+                src="/projects/boca-raton-stucco-garage-detail.jpeg"
+                alt="Actual close view of stucco repair work above the garage door before exterior painting"
+                width="1536"
+                height="1152"
+                loading="lazy"
+                className="aspect-[4/5] w-full object-cover"
+              />
+              <figcaption className="px-5 py-5 text-sm leading-6 text-[#0D1B2A]/70">
+                Close view above the garage during restoration; this is not a painted after photo.
+              </figcaption>
+            </figure>
+          </div>
+
+          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+            <div className="border-t border-[#8A6A32]/50 pt-6">
+              <h3 className="font-serif text-2xl">What the record shows</h3>
+              <p className="mt-4 leading-7 text-[#0D1B2A]/70">
+                The openings were protected while the exterior surfaces were
+                prepared and repaired. The photographs show the wall finish in
+                progress around the window and garage. They document the stucco
+                stage of this property, without implying that the subsequent
+                painting was delivered by VELLORI.
+              </p>
+            </div>
+            <div className="border-t border-[#8A6A32]/50 pt-6">
+              <h3 className="font-serif text-2xl">Where the project record ends</h3>
+              <p className="mt-4 leading-7 text-[#0D1B2A]/70">
+                We do not have a verified photograph of the property after
+                painting. Any color concepts shared for this project are
+                AI-assisted design visualizations, not photographs of a
+                completed paint job. Product specifications, measurements, and
+                long-term performance are not claimed here.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="px-6 py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">
