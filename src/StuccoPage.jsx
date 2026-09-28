@@ -203,8 +203,7 @@ export default function StuccoPage() {
           <p className="mt-7 max-w-3xl text-lg leading-8 text-[#0D1B2A]/75">
             These photographs document VELLORI's work on a residential exterior in
             Boca Raton: surface preparation, stucco repair, and application of a
-            new exterior finish. They show the actual property before and during
-            the stucco work. Exterior painting was a separate stage and was not
+            new exterior finish. They show the actual property while the stucco work was underway. Exterior painting was a separate stage and was not
             included in VELLORI's scope for this project.
           </p>
 
