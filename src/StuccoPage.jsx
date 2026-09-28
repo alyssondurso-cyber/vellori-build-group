@@ -192,6 +192,58 @@ export default function StuccoPage() {
     </div>
   </div>
 </section>
+      <section className="bg-[#0D1B2A] px-6 py-24 text-white lg:px-10" aria-labelledby="stucco-finish-study">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">
+            Finish Study
+          </p>
+          <h2 id="stucco-finish-study" className="mt-5 max-w-4xl font-serif text-4xl leading-tight md:text-6xl">
+            From fresh stucco to a refined exterior.
+          </h2>
+          <p className="mt-7 max-w-3xl text-base leading-7 text-white/75">
+            A visual study of the same facade, showing an even stucco application
+            and a proposed warm ivory finish. Both images are digital visualizations
+            based on a project reference, not photographs of completed work.
+          </p>
+
+          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+            <figure className="border border-white/15 bg-[#14263A]">
+              <img
+                src="/stucco-finish-before.webp"
+                alt="Digital visualization of a garage facade with fresh gray stucco consistently applied before painting"
+                width="900"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                className="aspect-[3/4] w-full object-cover"
+              />
+              <figcaption className="p-6">
+                <span className="text-xs uppercase tracking-[0.22em] text-[#C8A96B]">Visualized stage 01</span>
+                <h3 className="mt-3 font-serif text-2xl">Fresh stucco application</h3>
+              </figcaption>
+            </figure>
+            <figure className="border border-white/15 bg-[#14263A]">
+              <img
+                src="/stucco-finish-after.webp"
+                alt="Digital visualization of the same garage facade with a cohesive warm ivory exterior finish"
+                width="900"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                className="aspect-[3/4] w-full object-cover"
+              />
+              <figcaption className="p-6">
+                <span className="text-xs uppercase tracking-[0.22em] text-[#C8A96B]">Visualized stage 02</span>
+                <h3 className="mt-3 font-serif text-2xl">Proposed ivory finish</h3>
+              </figcaption>
+            </figure>
+          </div>
+          <p className="mt-6 text-sm leading-6 text-white/60">
+            Illustrative concept. Actual finishes and scope vary by property and project.
+          </p>
+        </div>
+      </section>
+
       <section className="px-6 py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">
