@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { track } from "@vercel/analytics";
 import { ArrowRight, CalendarDays, Camera, Mail, Phone } from "lucide-react";
-import { inferServiceFromPath } from "./LeadAnalytics.jsx";
+import { inferServiceFromPath, readCampaignAttribution } from "./LeadAnalytics.jsx";
 import VelloriLogo from "./VelloriLogo.jsx";
 
 const inputClass = "mt-2 w-full border border-[#0D1B2A]/15 bg-[#F8F5EE] px-4 py-3 text-sm outline-none transition focus:border-[#C8A96B] focus:ring-1 focus:ring-[#C8A96B]";
@@ -42,6 +42,7 @@ export default function ProjectRequestPage() {
   const [error, setError] = useState("");
   const query = new URLSearchParams(window.location.search);
   const submitted = query.get("submitted") === "1";
+  const campaign = readCampaignAttribution();
   const referrer = document.referrer || "direct";
   const referrerPath = (() => {
     try {
@@ -162,9 +163,9 @@ export default function ProjectRequestPage() {
             <input type="text" name="website" tabIndex="-1" autoComplete="off" className="hidden" aria-hidden="true"/>
             <input type="hidden" name="sourcePage" value={sourcePage}/>
             <input type="hidden" name="referrer" value={referrer}/>
-            <input type="hidden" name="utmSource" value={query.get("utm_source") || ""}/>
-            <input type="hidden" name="utmMedium" value={query.get("utm_medium") || ""}/>
-            <input type="hidden" name="utmCampaign" value={query.get("utm_campaign") || ""}/>
+            <input type="hidden" name="utmSource" value={campaign.utm_source}/>
+            <input type="hidden" name="utmMedium" value={campaign.utm_medium}/>
+            <input type="hidden" name="utmCampaign" value={campaign.utm_campaign}/>
 
             <div className="border-b border-[#0D1B2A]/10 pb-8">
               <p className="text-xs uppercase tracking-[0.30em] text-[#C8A96B]">01 · Contact &amp; Property</p>
