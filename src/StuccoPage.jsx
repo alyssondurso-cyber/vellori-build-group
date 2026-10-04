@@ -192,6 +192,44 @@ export default function StuccoPage() {
     </div>
   </div>
 </section>
+      <section className="px-6 py-24 lg:px-10" aria-labelledby="stucco-project-florida">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+          <figure>
+            <img
+              src="/stucco-project-window.webp"
+              alt="Digitally retouched project image showing the stucco application stage around a protected residential window"
+              width="1448"
+              height="1086"
+              loading="lazy"
+              decoding="async"
+              className="aspect-[4/3] w-full object-cover"
+            />
+            <figcaption className="mt-4 text-xs leading-6 text-[#0D1B2A]/60">
+              Work in progress. Image digitally retouched with AI from a project photograph; not a completed painting result.
+            </figcaption>
+          </figure>
+          <div>
+            <p className="text-xs uppercase tracking-[0.35em] text-[#8A6A32]">Project in Florida</p>
+            <h2 id="stucco-project-florida" className="mt-6 font-serif text-4xl leading-tight md:text-5xl">
+              Residential stucco, repairs & exterior moldings.
+            </h2>
+            <p className="mt-7 text-lg leading-8 text-[#0D1B2A]/70">
+              VELLORI Build Group completed stucco application, repairs and exterior molding work for this residential property in Florida.
+            </p>
+            <p className="mt-5 leading-8 text-[#0D1B2A]/65">
+              The project image shows the application stage around protected windows. The scope combined repairs to existing surfaces, new stucco application and exterior molding work.
+            </p>
+            <p className="mt-5 leading-8 text-[#0D1B2A]/65">
+              Planning stucco repairs or exterior finish improvements? Share photos of your property, its location and the work you are considering.
+            </p>
+            <a href="/project-request" className="mt-8 inline-flex items-center gap-3 bg-[#0D1B2A] px-6 py-4 text-xs uppercase tracking-[0.16em] text-white transition hover:bg-[#24384D]">
+              Request Project Consultation
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#0D1B2A] px-6 py-24 text-white lg:px-10" aria-labelledby="stucco-finish-study">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">
