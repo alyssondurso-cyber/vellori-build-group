@@ -62,7 +62,7 @@ const serviceGroups = [
     title: "Exterior Remodeling",
     href: "/project-request",
     description:
-      "Organized execution and finish work for residential exterior transformations throughout South Florida.",
+      "VELLORI Build Group provides defined-scope exterior remodeling and renovation services, including stucco repairs and finishes, tile, travertine and natural stone installation, facade improvements, and surface preparation. We support homeowners and collaborate with architects, designers and licensed general contractors on residential projects from Boca Raton through Broward County to Miami-Dade.",
     items: [
       "Exterior Remodeling",
       "Exterior Renovation",
