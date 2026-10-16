@@ -12,7 +12,7 @@ const services = [
   { title: "Luxury Outdoor Living", href: "/outdoor-living-boca-raton" },
   { title: "Tile, Travertine & Stone Installation", href: "/travertine-boca-raton" },
   { title: "Pool Deck Transformations", href: "/travertine-boca-raton" },
-  { title: "Exterior Painting", href: "/project-request" },
+  { title: "Painting Touch-Ups & Small Painting Projects", href: "/project-request" },
   { title: "Deck Construction", href: "/outdoor-living-boca-raton" },
   { title: "High-End Exterior Remodeling", href: "/project-request" },
   { title: "Residential Exterior Improvements", href: "/project-request" },
