@@ -110,8 +110,9 @@ const serviceGroups = [
     title: "Interior & Finish Support",
     href: "/project-request",
     description:
-      "Selected residential interior finish support scopes approached with the same attention to detail applied to VELLORI exterior projects.",
+      "Drywall installation, repair and finishing, interior tile installation, and selected finish work for residential renovation projects. Wall and ceiling scopes are reviewed individually, with panel installation and finishing clearly defined in the project estimate.",
     items: [
+      "Wall & Ceiling Drywall Installation",
       "Drywall Repair Support",
       "Drywall Finishing Support",
       "Interior Tile Installation Support",
