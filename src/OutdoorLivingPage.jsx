@@ -11,6 +11,7 @@ import MobileLeadBar from "./MobileLeadBar.jsx";
 
 const outdoorLivingServices = [
   "Wood & Composite Deck Construction",
+  "Pergola Installation",
   "Outdoor Living Improvements",
   "Patio Improvements",
   "Pool Deck Improvements",
@@ -103,6 +104,10 @@ export default function OutdoorLivingPage() {
               surface work, finish quality, transitions, and disciplined field
               execution. VELLORI supports residential exterior projects with a
               focus on organization, craftsmanship, and the finished experience.
+            </p>
+
+            <p className="mt-6 text-lg leading-8 text-[#0D1B2A]/65">
+              VELLORI also provides pergola installation as a defined residential project scope. Share your city or ZIP code, photos of the space, approximate dimensions, and any plans or material preferences so we can review the scope and discuss an estimate.
             </p>
           </div>
 
