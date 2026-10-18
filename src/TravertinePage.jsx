@@ -15,6 +15,7 @@ const surfaceServices = [
   "Porcelain Tile Installation",
   "Natural Stone Installation",
   "Travertine Pool Decks",
+  "Travertine Pool Interior Installation",
   "Travertine Patios",
   "Travertine Walkways",
   "Floor & Surface Preparation",
@@ -106,6 +107,13 @@ export default function TravertinePage() {
               handled as one coordinated scope. VELLORI approaches each
               residential installation with organized execution and close
               attention to the finished surface.
+            </p>
+
+            <p className="mt-6 text-base leading-8 text-[#0D1B2A]/65">
+              We also provide defined-scope travertine installation inside
+              residential pools, including floors, walls, steps, and built-in
+              seating. Material suitability, existing conditions, and the
+              installation scope are reviewed for each project.
             </p>
           </div>
 
