@@ -131,6 +131,46 @@ export default function TravertinePage() {
         </div>
       </section>
 
+      <section aria-labelledby="pool-project-title" className="border-y border-[#0D1B2A]/10 bg-[#EAE4D8] px-6 py-24 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-xs uppercase tracking-[0.30em] text-[#8A6A32]">Selected Residential Project</p>
+          <div className="mt-6 grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
+            <h2 id="pool-project-title" className="max-w-3xl font-serif text-4xl leading-tight md:text-6xl">Travertine inside the pool. Detail at every level.</h2>
+            <p className="text-base leading-8 text-[#0D1B2A]/70">VELLORI installed travertine throughout this residential pool interior, including the patterned floor, walls, steps, and built-in seating.</p>
+          </div>
+          <div className="mt-12 grid items-start gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+            <figure>
+              <img src="/images/projects/travertine-pool-detail-retouched.png" width="941" height="1671" loading="lazy" decoding="async" alt="Presentation retouch of the travertine-lined pool interior, with a checkerboard floor, steps and built-in seating." className="mx-auto h-auto w-full max-w-md border border-[#0D1B2A]/10" />
+              <figcaption className="mt-4 max-w-md text-xs leading-6 text-[#0D1B2A]/65">AI-assisted presentation retouch of an original project photograph. The original footage and installation photographs document the work.</figcaption>
+            </figure>
+            <div>
+              <figure className="border border-[#0D1B2A]/10 bg-[#0D1B2A] p-5">
+                <video controls playsInline muted preload="none" width="512" height="910" poster="/images/projects/travertine-pool-water-original.jpg" aria-label="Original footage of the travertine pool interior viewed through water" className="mx-auto max-h-[520px] w-full object-contain">
+                  <source src="/videos/projects/travertine-pool-water.mp4" type="video/mp4" />
+                  Your browser does not support embedded video.
+                </video>
+                <figcaption className="mt-4 text-xs leading-6 text-white/75">Original project footage. The pool interior is shown with water; surrounding work was still in progress.</figcaption>
+              </figure>
+              <details className="mt-6 border border-[#0D1B2A]/15 bg-white p-6">
+                <summary className="cursor-pointer text-sm font-medium text-[#0D1B2A]">View the original installation stages</summary>
+                <div className="mt-6 grid gap-6 sm:grid-cols-2">
+                  <figure>
+                    <img src="/images/projects/travertine-pool-floor-layout.jpg" width="1152" height="1536" loading="lazy" decoding="async" alt="Original site photograph showing the travertine floor layout during installation." className="h-auto w-full" />
+                    <figcaption className="mt-3 text-xs leading-6 text-[#0D1B2A]/65">Floor layout during installation. Original photograph.</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="/images/projects/travertine-pool-installation-progress.jpg" width="864" height="1536" loading="lazy" decoding="async" alt="Original site photograph of the checkerboard travertine floor being installed inside the pool." className="h-auto w-full" />
+                    <figcaption className="mt-3 text-xs leading-6 text-[#0D1B2A]/65">Installation in progress. Original photograph.</figcaption>
+                  </figure>
+                </div>
+              </details>
+              <p className="mt-7 text-sm leading-7 text-[#0D1B2A]/70">Planning a tile or travertine installation? Send us your project photos, city, and a brief description of the work you need.</p>
+              <a href="/project-request?from=%2Ftravertine-boca-raton&service=Travertine%20pool%20interior" className="mt-6 inline-flex items-center gap-3 bg-[#C8A96B] px-7 py-4 text-xs uppercase tracking-[0.16em] text-[#0D1B2A] focus:outline-none focus:ring-2 focus:ring-[#0D1B2A]">Request an Estimate <ArrowRight className="h-4 w-4" /></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white px-6 py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">
