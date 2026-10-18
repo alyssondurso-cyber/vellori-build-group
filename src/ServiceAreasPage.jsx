@@ -23,6 +23,10 @@ const regions = [
 
 const services = [
   {
+    label: "Wall and ceiling drywall installation, repair, and finishing",
+    href: "/services",
+  },
+  {
     label: "Stucco repair, EIFS support, and refined exterior finishes",
     href: "/stucco-boca-raton",
   },
