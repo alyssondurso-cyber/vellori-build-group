@@ -122,6 +122,23 @@ export default function StuccoPage() {
         </div>
       </section>
 
+
+      <section className="border-y border-[#0D1B2A]/10 bg-[#EAE4D8] px-6 py-24 lg:px-10" aria-labelledby="stucco-repair-scope">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.85fr]">
+          <div>
+            <p className="text-xs uppercase tracking-[0.30em] text-[#8A6A32]">Residential Stucco Repair</p>
+            <h2 id="stucco-repair-scope" className="mt-6 font-serif text-4xl leading-tight md:text-5xl">Stucco repairs for cracks, damaged areas and worn exterior finishes</h2>
+            <p className="mt-7 text-lg leading-8 text-[#0D1B2A]/70">Cracked stucco, damaged patches or an uneven exterior finish? VELLORI provides residential stucco repair and patching in Boca Raton and surrounding South Florida communities.</p>
+            <p className="mt-5 leading-8 text-[#0D1B2A]/65">Depending on the condition and agreed scope, work may include removing loose material, preparing the surface, applying repair coats and working toward a consistent finish with the surrounding wall.</p>
+          </div>
+          <div className="border border-[#0D1B2A]/10 bg-white p-7 sm:p-9">
+            <h3 className="font-serif text-3xl leading-tight">Start with photos of the affected area</h3>
+            <p className="mt-6 text-sm leading-7 text-[#0D1B2A]/70">Send a close-up of the damage, a wider photo of the wall, your city or ZIP code, and a brief description of the problem. Let us know whether the area has been repaired before or shows staining after rain.</p>
+            <p className="mt-5 text-sm leading-7 text-[#0D1B2A]/65">Photos help us understand the initial scope. A site visit may be needed before we can confirm the repair approach and provide an estimate. Conditions requiring structural assessment or licensed-trade work must be addressed before surface repairs proceed.</p>
+            <a href="/project-request?from=%2Fstucco-boca-raton&amp;service=Stucco%20repair" className="mt-7 inline-flex items-center gap-3 bg-[#0D1B2A] px-6 py-4 text-xs uppercase leading-6 tracking-[0.12em] text-white focus:outline-none focus:ring-2 focus:ring-[#C8A96B]">Request a Stucco Repair Estimate<ArrowRight className="h-4 w-4 flex-none" aria-hidden="true" /></a>
+          </div>
+        </div>
+      </section>
       <section className="bg-white px-6 py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">
