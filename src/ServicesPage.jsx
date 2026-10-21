@@ -110,7 +110,7 @@ const serviceGroups = [
     title: "Interior & Finish Support",
     href: "/project-request",
     description:
-      "Drywall installation, repair and finishing, interior tile installation, and selected finish work for residential renovation projects. Wall and ceiling scopes are reviewed individually, with panel installation and finishing clearly defined in the project estimate.",
+      "Drywall installation, repair and finishing, interior tile installation, and selected finish work for residential renovation projects. Wall and ceiling scopes are reviewed individually, with panel installation and finishing clearly defined in the project estimate. For drywall repair after water damage, we repair or replace affected wall and ceiling sections once the source of water has been corrected and the area is dry and suitable for repair. Send photos, your city or ZIP code and the approximate affected area to request an estimate.",
     items: [
       "Wall & Ceiling Drywall Installation",
       "Drywall Repair Support",
