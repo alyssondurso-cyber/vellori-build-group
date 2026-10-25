@@ -48,6 +48,13 @@ const services = [
   },
 ];
 
+const relatedServices = [
+  { label: "Stucco repair and exterior finishes", href: "/stucco-boca-raton" },
+  { label: "Concrete surface renewal", href: "/concrete-boca-raton" },
+  { label: "Travertine, tile and natural stone", href: "/travertine-boca-raton" },
+  { label: "Outdoor living and deck construction", href: "/outdoor-living-boca-raton" },
+];
+
 export default function ServiceAreasPage() {
   useEffect(() => {
     document.title = "South Florida Service Areas | VELLORI Build Group";
@@ -133,6 +140,20 @@ export default function ServiceAreasPage() {
                 </ul>
               </article>
             ))}
+          </div>
+          <div className="mt-14 border-t border-[#0D1B2A]/10 pt-10">
+            <h3 className="font-serif text-2xl">Related Services</h3>
+            <nav aria-label="Related services" className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {relatedServices.map((service) => (
+                <a
+                  key={service.href}
+                  href={service.href}
+                  className="flex min-h-[56px] items-center border border-[#0D1B2A]/10 bg-white px-5 py-3 text-sm underline decoration-[#C8A96B]/45 underline-offset-4 transition hover:text-[#8A6A32]"
+                >
+                  {service.label}
+                </a>
+              ))}
+            </nav>
           </div>
         </div>
       </section>
