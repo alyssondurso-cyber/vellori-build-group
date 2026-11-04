@@ -67,7 +67,7 @@ const serviceGroups = [
       "Exterior Remodeling",
       "Exterior Renovation",
       "Facade Improvements",
-      "Painting Touch-Ups & Small Painting Projects",
+      "Finish Touch-Ups & Minor Surface Corrections",
       "Exterior Finish Restoration",
       "Residential Exterior Improvements",
       "Surface Repairs",
