@@ -139,6 +139,22 @@ export default function StuccoPage() {
           </div>
         </div>
       </section>
+      <section className="border-b border-[#0D1B2A]/10 bg-white px-6 py-24 lg:px-10" aria-labelledby="stucco-installation-scope">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.85fr]">
+          <div>
+            <p className="text-xs uppercase tracking-[0.30em] text-[#8A6A32]">Stucco Installation</p>
+            <h2 id="stucco-installation-scope" className="mt-6 font-serif text-4xl leading-tight md:text-5xl">Stucco installation for residential exteriors in Boca Raton</h2>
+            <p className="mt-7 text-lg leading-8 text-[#0D1B2A]/70">Planning stucco for a new wall or an exterior renovation? VELLORI Build Group executes residential stucco installation in Boca Raton and surrounding South Florida communities, from surface preparation through the finish coats, according to the specific conditions of each project.</p>
+            <p className="mt-5 leading-8 text-[#0D1B2A]/65">Scope may include surface preparation, metal lath installation when required, scratch coat, brown coat, and smooth or textured finish coats.</p>
+          </div>
+          <div className="border border-[#0D1B2A]/10 bg-[#EAE4D8] p-7 sm:p-9">
+            <h3 className="font-serif text-3xl leading-tight">Tell us about the wall</h3>
+            <p className="mt-6 text-sm leading-7 text-[#0D1B2A]/70">Share the project location, the approximate wall area, the finish you are considering, and whether the wall is new or part of a renovation. Photos or plans, if available, help us understand the initial scope.</p>
+            <p className="mt-5 text-sm leading-7 text-[#0D1B2A]/65">A site visit is needed before we can confirm scope and provide an estimate. Structural conditions or licensed-trade work must be addressed by the appropriate professionals before stucco is applied.</p>
+            <a href="/project-request?from=%2Fstucco-boca-raton&amp;service=Stucco%20%26%20exterior%20finishes" className="mt-7 inline-flex items-center gap-3 bg-[#0D1B2A] px-6 py-4 text-xs uppercase leading-6 tracking-[0.12em] text-white focus:outline-none focus:ring-2 focus:ring-[#C8A96B]">Request a Stucco Installation Estimate<ArrowRight className="h-4 w-4 flex-none" aria-hidden="true" /></a>
+          </div>
+        </div>
+      </section>
       <section className="bg-white px-6 py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs uppercase tracking-[0.35em] text-[#C8A96B]">
